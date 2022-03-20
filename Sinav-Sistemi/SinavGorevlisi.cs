@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Sinav_Sistemi
 {
-    class SinavGorevlisi:User
+    class SinavGorevlisi:Users
     {
+        public int SicilNo { get; set; }
         public Question question;
+
         public SinavGorevlisi()
         {
             question = new Question();

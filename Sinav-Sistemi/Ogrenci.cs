@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Sinav_Sistemi
 {
-    class Ogrenci:User
+    class Ogrenci:Users
     {
+        public int OgrNo { get; set; }
 
     }
 }

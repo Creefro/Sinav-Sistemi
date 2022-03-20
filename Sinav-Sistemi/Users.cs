@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sinav_Sistemi
 {
-    public class User
+    public class Users
     {
         public int UserId { get; set; }
         public string KullaniciAdi { get; set; }

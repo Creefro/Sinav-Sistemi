@@ -25,7 +25,7 @@ namespace Sinav_Sistemi
 
         private void girisYap_Click(object sender, EventArgs e)
         {
-            SqlConnection sqlcon = new SqlConnection("Data Source=DESKTOP-71327EO\\SQLEXPRESS;Initial Catalog=SinavSistemi;Integrated Security=True");
+            SqlConnection sqlcon = new SqlConnection(Helper.CnnVal("SinavSistemiDB"));
             string query = "Select * from Users Where KullaniciAdi = '" + kullaniciAdiTextBox.Text.Trim() + "' and Password = '" + sifreTextBox.Text.Trim() + "'";
 
             SqlDataAdapter sda = new SqlDataAdapter(query,sqlcon);
@@ -34,7 +34,6 @@ namespace Sinav_Sistemi
             sda.Fill(dtbl);
             if (dtbl.Rows.Count == 1)
             {
-
                 Main formMain = new Main();
                 this.Hide();
                 formMain.Show();
