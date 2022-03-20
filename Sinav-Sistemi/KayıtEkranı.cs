@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Sinav_Sistemi
 {
-    public partial class Form1 : Form
+    public partial class KayıtEkranı : Form
     {
-        public Form1()
+        public KayıtEkranı()
         {
             InitializeComponent();
+        }
+
+        private void kayitOlButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
