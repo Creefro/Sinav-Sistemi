@@ -18,26 +18,26 @@ namespace Sinav_Sistemi
             InitializeComponent();
         }
 
+        public Users user;
+        public UserProvider kayit;
         private void kayitOlButton_Click(object sender, EventArgs e)
         {
-            SqlConnection sqlcon = new SqlConnection(Helper.CnnVal("SinavSistemiDB"));
-            sqlcon.Open();
-            string query = "INSERT INTO Users (KullaniciAdi,Ad,Soyad,Password,Mail,UserTypeId) VALUES (@KullaniciAdi,@Ad,@Soyad,@Password,@Mail,@UserTypeId)";
-            SqlCommand cmd = new SqlCommand(query,sqlcon);
-
-            if (SifreKontrol() == true && UniqueKullaniciAdi() == true)
+            kayit = new UserProvider();
+            user = new Users();
+            user.KullaniciAdi = kAdiText.Text;
+            user.Ad = adText.Text;
+            user.Soyad = soyadText.Text;
+            user.Password = sifreText.Text;
+            user.Mail = epostaText.Text;
+            user.UserTypeId = userTypeId();
+            if (kayit.InsertUser(user)&&SifreKontrol()==true)
             {
-                cmd.Parameters.AddWithValue("@KullaniciAdi", kAdiText.Text);
-                cmd.Parameters.AddWithValue("@Ad", adText.Text);
-                cmd.Parameters.AddWithValue("@Soyad", soyadText.Text);
-                cmd.Parameters.AddWithValue("@Password", sifreText.Text);
-                cmd.Parameters.AddWithValue("@Mail", epostaText.Text);
-                cmd.Parameters.AddWithValue("@UserTypeId", userTypeId());
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Kayıt tamamlandı. Giriş yapabilirsiniz.");
+                MessageBox.Show("Kullanıcı Eklendi");
             }
             else
-                MessageBox.Show("Bilgilerinizi kontrol ediniz.");
+            {
+                MessageBox.Show("Bu Kullanıcı adı var!");
+            }
         }
 
         public bool SifreKontrol()
@@ -50,25 +50,7 @@ namespace Sinav_Sistemi
             else
                 return true;
         }
-        public bool UniqueKullaniciAdi()
-        {
-            SqlConnection sqlcon = new SqlConnection(Helper.CnnVal("SinavSistemiDB"));
-            string query = "Select * from Users Where KullaniciAdi = '" + kAdiText.Text.Trim() + "'";
-
-            SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
-            DataTable dtbl = new DataTable();
-
-            sda.Fill(dtbl);
-            if (dtbl.Rows.Count == 1)
-            {
-                MessageBox.Show("Bu kullanıcı adı zaten alınmış. Başka bir şey bul.");
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
+        
         public int userTypeId()
         {
             if (ogrenciRadioButton.Checked)
