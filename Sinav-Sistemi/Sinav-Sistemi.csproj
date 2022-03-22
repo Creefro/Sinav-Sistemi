@@ -81,7 +81,8 @@
     <Compile Include="Ogrenci.cs" />
     <Compile Include="Question.cs" />
     <Compile Include="SinavGorevlisi.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="UserProvider.cs" />
+    <Compile Include="Users.cs" />
     <Compile Include="GirişEkranı.cs">
       <SubType>Form</SubType>
     </Compile>

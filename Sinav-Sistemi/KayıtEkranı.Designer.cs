@@ -44,6 +44,7 @@ namespace Sinav_Sistemi
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.kayitOlButton = new System.Windows.Forms.Button();
+            this.girisYapbttn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // kAdiText
@@ -174,11 +175,22 @@ namespace Sinav_Sistemi
             this.kayitOlButton.UseVisualStyleBackColor = true;
             this.kayitOlButton.Click += new System.EventHandler(this.kayitOlButton_Click);
             // 
+            // girisYapbttn
+            // 
+            this.girisYapbttn.Location = new System.Drawing.Point(96, 354);
+            this.girisYapbttn.Name = "girisYapbttn";
+            this.girisYapbttn.Size = new System.Drawing.Size(110, 41);
+            this.girisYapbttn.TabIndex = 15;
+            this.girisYapbttn.Text = "Giriş Yap";
+            this.girisYapbttn.UseVisualStyleBackColor = true;
+            this.girisYapbttn.Click += new System.EventHandler(this.girisYapbttn_Click);
+            // 
             // KayıtEkranı
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(498, 450);
+            this.Controls.Add(this.girisYapbttn);
             this.Controls.Add(this.kayitOlButton);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -218,5 +230,6 @@ namespace Sinav_Sistemi
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button kayitOlButton;
+        private System.Windows.Forms.Button girisYapbttn;
     }
 }
