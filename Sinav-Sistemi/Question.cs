@@ -13,6 +13,9 @@ namespace Sinav_Sistemi
         public int SectionId { get; set; }
         public int UnitId { get; set; }
         public string PicturePath { get; set; }
-        public int RightAnswer { get; set; }
-    }
+        public string RightAnswer { get; set; }
+        public string WrongAnswer1 { get; set; }
+        public string WrongAnswer2 { get; set; }
+        public string WrongAnswer3 { get; set; }
+    }                                       
 }
