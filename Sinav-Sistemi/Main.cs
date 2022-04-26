@@ -16,5 +16,12 @@ namespace Sinav_Sistemi
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SınavEkle s = new SınavEkle();
+            this.Hide();
+            s.Show();
+        }
     }
 }

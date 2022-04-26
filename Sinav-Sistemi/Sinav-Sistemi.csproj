@@ -54,6 +54,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -81,6 +82,12 @@
     <Compile Include="Ogrenci.cs" />
     <Compile Include="Question.cs" />
     <Compile Include="SinavGorevlisi.cs" />
+    <Compile Include="SınavEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SınavEkle.Designer.cs">
+      <DependentUpon>SınavEkle.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserProvider.cs" />
     <Compile Include="Users.cs" />
     <Compile Include="GirişEkranı.cs">
@@ -97,6 +104,9 @@
     <EmbeddedResource Include="KayıtEkranı.resx">
       <DependentUpon>KayıtEkranı.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -106,6 +116,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SınavEkle.resx">
+      <DependentUpon>SınavEkle.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
