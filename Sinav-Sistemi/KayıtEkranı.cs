@@ -18,18 +18,20 @@ namespace Sinav_Sistemi
             InitializeComponent();
         }
 
-        public Users user;
-        public UserProvider kayit;
+        //public Users user;
+        //public UserProvider kayit;
         private void kayitOlButton_Click(object sender, EventArgs e)
         {
-            kayit = new UserProvider();
-            user = new Users();
-            user.KullaniciAdi = kAdiText.Text;
-            user.Ad = adText.Text;
-            user.Soyad = soyadText.Text;
-            user.Password = sifreText.Text;
-            user.Mail = epostaText.Text;
-            user.UserTypeId = userTypeId();
+            UserProvider kayit = new UserProvider();
+            Users user = new Users
+            {
+                KullaniciAdi = kAdiText.Text,
+                Ad = adText.Text,
+                Soyad = soyadText.Text,
+                Password = sifreText.Text,
+                Mail = epostaText.Text,
+                UserTypeId = userTypeId()
+            };
             if (kayit.InsertUser(user)&&SifreKontrol()==true)
             {
                 MessageBox.Show("Kullanıcı Eklendi");

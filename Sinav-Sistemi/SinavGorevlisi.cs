@@ -10,13 +10,13 @@ namespace Sinav_Sistemi
     class SinavGorevlisi : Users
     {
         public int SicilNo { get; set; }
-        public Question question;
+        public Questions question;
 
         public SinavGorevlisi()
         {
-            question = new Question();
+            question = new Questions();
         }
-        public bool InsertQuestion(Question question)
+        public bool InsertQuestion(Questions question)
         {
             bool result = false;
             

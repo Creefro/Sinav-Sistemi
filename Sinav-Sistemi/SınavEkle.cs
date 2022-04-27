@@ -17,7 +17,7 @@ namespace Sinav_Sistemi
             InitializeComponent();
         }
         Image file;
-        Question question;
+        
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog f = new OpenFileDialog();
@@ -33,15 +33,18 @@ namespace Sinav_Sistemi
         //soruyu kaydet
         private void button3_Click(object sender, EventArgs e)
         {
-            question = new Question();
-            question.QuestionText = richTextBox1.Text;
-            question.SectionId = Convert.ToInt32(numericUpDown1.Value);
-            question.UnitId = Convert.ToInt32(numericUpDown2.Value);
-            question.PicturePath = picpathlabel.Text;
-            question.RightAnswer = rightansTxBox.Text;
-            question.WrongAnswer1 = textBox2.Text;
-            question.WrongAnswer2 = textBox3.Text;
-            question.WrongAnswer3 = textBox4.Text;
+            QuestionCreator creator = new SoruOluşturucu();
+            bool result = creator.SomeOperation(richTextBox1.Text, Convert.ToInt32(numericUpDown1.Value), Convert.ToInt32(numericUpDown2.Value), picpathlabel.Text, rightansTxBox.Text, textBox2.Text, textBox3.Text, textBox4.Text);
+
+            if (result)
+            {
+                MessageBox.Show("Soru Başarıyla Eklendi");
+            }
+            else
+            {
+                MessageBox.Show("Hata!");
+            }
+            
         }
     }
 }

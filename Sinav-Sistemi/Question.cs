@@ -1,21 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Sinav_Sistemi
 {
-    class Question
+    public class Questions:ISoru
     {
-        public int QuestionId { get; set; }
-        public string QuestionText { get; set; }
-        public int SectionId { get; set; }
-        public int UnitId { get; set; }
-        public string PicturePath { get; set; }
-        public string RightAnswer { get; set; }
-        public string WrongAnswer1 { get; set; }
-        public string WrongAnswer2 { get; set; }
-        public string WrongAnswer3 { get; set; }
+        //Concreate Product
+        public override bool InsertQuestion(ISoru question)
+        {
+            bool result = false;
+
+            SqlConnection connection = Helper.GetConnection("SinavSistemiDB");
+
+            SqlCommand command = new SqlCommand("INSERT INTO Questions (QuestionText,SectionId,UnitId,PicturePath,RightAnswer,WrongAnswer1,WrongAnswer2,WrongAnswer3) VALUES('" + question.QuestionText + "','" + question.SectionId + "','" + question.UnitId + "','" + question.PicturePath + "','" + question.RightAnswer + "','" + question.WrongAnswer1 + "','" + question.WrongAnswer2 + "','" + question.WrongAnswer3 + "')");
+            command.Connection = connection;
+            connection.Open();
+            if (command.ExecuteNonQuery() != -1)
+            {
+                result = true;
+            }
+            connection.Close();
+
+            return result;
+        }
     }                                       
 }
