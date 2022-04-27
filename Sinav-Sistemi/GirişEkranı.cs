@@ -31,9 +31,12 @@ namespace Sinav_Sistemi
             user = giris.getUser(kullaniciAdiTextBox.Text, sifreTextBox.Text);
             if (user != null)
             {
-                Main main = new Main();
-                this.Hide();
-                main.Show();
+                if (user.UserTypeId == 2)
+                {
+                    ÖğretmenGirişMain main = new ÖğretmenGirişMain();
+                    this.Hide();
+                    main.Show();
+                }
             }
             else
             {

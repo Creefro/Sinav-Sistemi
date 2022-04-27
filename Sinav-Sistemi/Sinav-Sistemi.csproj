@@ -67,17 +67,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helper.cs" />
+    <Compile Include="ISoru.cs" />
     <Compile Include="KayıtEkranı.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="KayıtEkranı.Designer.cs">
       <DependentUpon>KayıtEkranı.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs">
+    <Compile Include="QuestionCreator.cs" />
+    <Compile Include="SoruOluşturucu.cs" />
+    <Compile Include="ÖğretmenGirişMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
+    <Compile Include="ÖğretmenGirişMain.Designer.cs">
+      <DependentUpon>ÖğretmenGirişMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Ogrenci.cs" />
     <Compile Include="Question.cs" />
@@ -104,8 +107,8 @@
     <EmbeddedResource Include="KayıtEkranı.resx">
       <DependentUpon>KayıtEkranı.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
+    <EmbeddedResource Include="ÖğretmenGirişMain.resx">
+      <DependentUpon>ÖğretmenGirişMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

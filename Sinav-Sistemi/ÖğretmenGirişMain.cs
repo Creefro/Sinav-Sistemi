@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sinav_Sistemi
 {
-    public partial class Main : Form
+    public partial class ÖğretmenGirişMain : Form
     {
-        public Main()
+        public ÖğretmenGirişMain()
         {
             InitializeComponent();
         }

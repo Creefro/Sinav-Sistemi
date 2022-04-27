@@ -25,8 +25,12 @@ namespace Sinav_Sistemi
             {
                 user = new Users();
                 user.UserId = reader.GetInt32(0); //id
-                user.KullaniciAdi = reader.GetString(1);   //name
+                user.KullaniciAdi = reader.GetString(1);   //kname
+                user.Ad = reader.GetString(2); //ad
+                user.Soyad = reader.GetString(3); //ad
                 user.Password = reader.GetString(4);  //password
+                user.Mail = reader.GetString(5); //ad
+                user.UserTypeId = reader.GetInt32(6);
             }
             connection.Close();
             
