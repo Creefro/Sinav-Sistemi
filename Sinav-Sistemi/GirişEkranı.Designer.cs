@@ -98,6 +98,7 @@ namespace Sinav_Sistemi
             this.label3.Size = new System.Drawing.Size(108, 17);
             this.label3.TabIndex = 6;
             this.label3.Text = "Şifremi Unuttum";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // GirişEkranı
             // 

@@ -27,9 +27,9 @@ namespace Sinav_Sistemi
                 user.UserId = reader.GetInt32(0); //id
                 user.KullaniciAdi = reader.GetString(1);   //kname
                 user.Ad = reader.GetString(2); //ad
-                user.Soyad = reader.GetString(3); //ad
+                user.Soyad = reader.GetString(3); //soyad
                 user.Password = reader.GetString(4);  //password
-                user.Mail = reader.GetString(5); //ad
+                user.Mail = reader.GetString(5); //mail
                 user.UserTypeId = reader.GetInt32(6);
             }
             connection.Close();
@@ -42,7 +42,7 @@ namespace Sinav_Sistemi
             bool result = false;
             using (var connection = Helper.GetConnection("SinavSistemiDB"))
             {
-                SqlCommand command = new SqlCommand("SELECT *FROM Users WHERE KullaniciAdi='" + user.KullaniciAdi + "'");
+                SqlCommand command = new SqlCommand("SELECT *FROM Users WHERE KullaniciAdi='" + user.KullaniciAdi + "' OR Mail='" + user.Mail + "'");
                 
                 command.Connection = connection;
                 connection.Open();
@@ -76,5 +76,41 @@ namespace Sinav_Sistemi
             }
             return result;
         }
+        public bool ŞifreDeğiş(string kullanıcıAdı, string password,string newPassword)
+        {
+            bool result = false;
+            bool result1 = false;
+            SqlConnection connection = Helper.GetConnection("SinavSistemiDB");
+
+            SqlCommand command1 = new SqlCommand("SELECT *FROM Users WHERE KullaniciAdi='" + kullanıcıAdı + "'");
+            command1.Connection = connection;
+            connection.Open();
+            SqlDataReader reader = command1.ExecuteReader();
+
+            if (reader.Read())
+            {
+                result1 = true;
+            }
+            connection.Close();
+            //containsUser metoduna benzer bir algoritma fakat containsUser Users tipinde
+            //parametre alıyor. Bize direkt kullanıcı adının kendisi lazım ondan kod tekrarına
+            //düşüldü.
+            if (result1)
+            {
+                SqlCommand command = new SqlCommand("UPDATE Users SET Password='" + newPassword + "' WHERE KullaniciAdi = '" + kullanıcıAdı + "' AND Password = '" + password + "'");
+
+                command.Connection = connection;
+                connection.Open();
+
+                if (command.ExecuteNonQuery() != -1)
+                {
+                    result = true;
+                }
+                connection.Close();
+
+            }
+                return result;
+        }
+        
     }
 }
