@@ -107,6 +107,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ExtraSınav.resx">
+      <DependentUpon>ExtraSınav.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GirişEkranı.resx">
       <DependentUpon>GirişEkranı.cs</DependentUpon>
     </EmbeddedResource>

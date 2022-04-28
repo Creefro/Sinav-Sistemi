@@ -27,5 +27,32 @@ namespace Sinav_Sistemi
 
             return result;
         }
+        public bool GetQuestion(ISoru question)
+        {
+            bool isOk = false;
+
+            SqlConnection connection = Helper.GetConnection("SinavSistemiDB");
+
+            SqlCommand command = new SqlCommand("SELECT QuestionText,PicturePath,RightAnswer,WrongAnswer1,WrongAnswer2,WrongAnswer3 FROM Questions");
+           
+            command.Connection = connection;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            
+            while (reader.Read())
+            {
+                question.QuestionText = reader.GetString(0);
+                question.PicturePath = reader.GetString(1);
+                question.RightAnswer = reader.GetString(2);
+                question.WrongAnswer1 = reader.GetString(3);
+                question.WrongAnswer2 = reader.GetString(4);
+                question.WrongAnswer3 = reader.GetString(5);
+            }
+            connection.Close();
+           
+            isOk = true;
+            
+            return isOk;
+        }
     }                                       
 }
