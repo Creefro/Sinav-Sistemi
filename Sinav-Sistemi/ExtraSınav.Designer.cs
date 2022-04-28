@@ -90,7 +90,7 @@ namespace Sinav_Sistemi
             // ansC
             // 
             this.ansC.AutoSize = true;
-            this.ansC.Location = new System.Drawing.Point(12, 325);
+            this.ansC.Location = new System.Drawing.Point(12, 349);
             this.ansC.Name = "ansC";
             this.ansC.Size = new System.Drawing.Size(22, 17);
             this.ansC.TabIndex = 5;
@@ -100,7 +100,7 @@ namespace Sinav_Sistemi
             // ansD
             // 
             this.ansD.AutoSize = true;
-            this.ansD.Location = new System.Drawing.Point(392, 325);
+            this.ansD.Location = new System.Drawing.Point(392, 349);
             this.ansD.Name = "ansD";
             this.ansD.Size = new System.Drawing.Size(23, 17);
             this.ansD.TabIndex = 6;

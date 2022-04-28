@@ -27,10 +27,8 @@ namespace Sinav_Sistemi
 
             return result;
         }
-        public bool GetQuestion(ISoru question)
+        public ISoru GetQuestion(ISoru question)
         {
-            bool isOk = false;
-
             SqlConnection connection = Helper.GetConnection("SinavSistemiDB");
 
             SqlCommand command = new SqlCommand("SELECT QuestionText,PicturePath,RightAnswer,WrongAnswer1,WrongAnswer2,WrongAnswer3 FROM Questions");
@@ -49,10 +47,8 @@ namespace Sinav_Sistemi
                 question.WrongAnswer3 = reader.GetString(5);
             }
             connection.Close();
-           
-            isOk = true;
-            
-            return isOk;
+
+            return question;
         }
     }                                       
 }
