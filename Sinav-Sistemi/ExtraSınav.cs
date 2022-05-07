@@ -17,19 +17,20 @@ namespace Sinav_Sistemi
             InitializeComponent();
         }
         static Random random = new Random();
-        private void ExtraSınav_Load(object sender, EventArgs e)
+
+        private void nextQueButton_Click(object sender, EventArgs e)
         {
             Questions questions = new Questions();
             ISoru soru;
             soru = questions.GetQuestion(questions);
             queText.Text = soru.QuestionText;
             pictureBox1.Image = Image.FromFile(soru.PicturePath);
-            
+
             string[] labels = { ansA.Text, ansB.Text, ansC.Text, ansD.Text };
             int[] wrongs = new int[3];
-            
+
             int a = random.Next(0, 3);
-            
+
             if (a == 0)
                 wrongs = new int[] { 1, 2, 3 };
             else if (a == 1)
@@ -38,17 +39,12 @@ namespace Sinav_Sistemi
                 wrongs = new int[] { 0, 1, 3 };
             else if (a == 3)
                 wrongs = new int[] { 0, 1, 2 };
-            
+
             labels[a] = soru.RightAnswer;
-            
+
             labels[wrongs[0]] = soru.WrongAnswer1;
             labels[wrongs[1]] = soru.WrongAnswer1;
             labels[wrongs[2]] = soru.WrongAnswer1;
-        }
-
-        private void nextQueButton_Click(object sender, EventArgs e)
-        {
-
         }
     }
 } 
