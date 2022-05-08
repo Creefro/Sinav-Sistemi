@@ -66,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExtraSınav.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtraSınav.Designer.cs">
+      <DependentUpon>ExtraSınav.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="ISoru.cs" />
     <Compile Include="KayıtEkranı.cs">
@@ -101,6 +107,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ExtraSınav.resx">
+      <DependentUpon>ExtraSınav.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="ŞifreDeğiştir.cs">
       <SubType>Form</SubType>
     </Compile>
