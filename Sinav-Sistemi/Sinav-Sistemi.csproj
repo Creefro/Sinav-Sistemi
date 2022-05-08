@@ -110,6 +110,12 @@
     <EmbeddedResource Include="ExtraSınav.resx">
       <DependentUpon>ExtraSınav.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="ŞifreDeğiştir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ŞifreDeğiştir.Designer.cs">
+      <DependentUpon>ŞifreDeğiştir.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="GirişEkranı.resx">
       <DependentUpon>GirişEkranı.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +136,9 @@
     </Compile>
     <EmbeddedResource Include="SınavEkle.resx">
       <DependentUpon>SınavEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ŞifreDeğiştir.resx">
+      <DependentUpon>ŞifreDeğiştir.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

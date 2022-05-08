@@ -51,5 +51,12 @@ namespace Sinav_Sistemi
             this.Hide();
             kyt.Show();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            ŞifreDeğiştir frm = new ŞifreDeğiştir();
+            this.Hide();
+            frm.Show();
+        }
     }
 }
