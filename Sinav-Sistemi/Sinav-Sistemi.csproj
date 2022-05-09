@@ -82,6 +82,12 @@
     </Compile>
     <Compile Include="QuestionCreator.cs" />
     <Compile Include="SoruOluşturucu.cs" />
+    <Compile Include="ÖğrenciGirişMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ÖğrenciGirişMain.Designer.cs">
+      <DependentUpon>ÖğrenciGirişMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="ÖğretmenGirişMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KayıtEkranı.resx">
       <DependentUpon>KayıtEkranı.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ÖğrenciGirişMain.resx">
+      <DependentUpon>ÖğrenciGirişMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ÖğretmenGirişMain.resx">
       <DependentUpon>ÖğretmenGirişMain.cs</DependentUpon>

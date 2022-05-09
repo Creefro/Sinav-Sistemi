@@ -31,7 +31,7 @@ namespace Sinav_Sistemi
         {
             SqlConnection connection = Helper.GetConnection("SinavSistemiDB");
 
-            SqlCommand command = new SqlCommand("SELECT QuestionText,PicturePath,RightAnswer,WrongAnswer1,WrongAnswer2,WrongAnswer3 FROM Questions");
+            SqlCommand command = new SqlCommand("SELECT * FROM Questions");
            
             command.Connection = connection;
             connection.Open();
@@ -39,12 +39,41 @@ namespace Sinav_Sistemi
             
             while (reader.Read())
             {
-                question.QuestionText = reader.GetString(0);
-                question.PicturePath = reader.GetString(1);
-                question.RightAnswer = reader.GetString(2);
-                question.WrongAnswer1 = reader.GetString(3);
-                question.WrongAnswer2 = reader.GetString(4);
-                question.WrongAnswer3 = reader.GetString(5);
+                question.QuestionId = reader.GetInt32(0);
+                question.QuestionText = reader.GetString(1);
+                question.SectionId = reader.GetInt32(2);
+                question.UnitId = reader.GetInt32(3);
+                question.PicturePath = reader.GetString(4);
+                question.RightAnswer = reader.GetString(5);
+                question.WrongAnswer1 = reader.GetString(6);
+                question.WrongAnswer2 = reader.GetString(7);
+                question.WrongAnswer3 = reader.GetString(8);
+            }
+            connection.Close();
+
+            return question;
+        }
+        public ISoru GetRandomQuestion(ISoru question)
+        {
+            SqlConnection connection = Helper.GetConnection("SinavSistemiDB");
+
+            SqlCommand command = new SqlCommand("SELECT TOP 1 * FROM Questions ORDER BY NEWID()");
+
+            command.Connection = connection;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                question.QuestionId = reader.GetInt32(0);
+                question.QuestionText = reader.GetString(1);
+                question.SectionId = reader.GetInt32(2);
+                question.UnitId = reader.GetInt32(3);
+                question.PicturePath = reader.GetString(4);
+                question.RightAnswer = reader.GetString(5);
+                question.WrongAnswer1 = reader.GetString(6);
+                question.WrongAnswer2 = reader.GetString(7);
+                question.WrongAnswer3 = reader.GetString(8);
             }
             connection.Close();
 

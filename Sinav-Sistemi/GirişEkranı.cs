@@ -37,6 +37,18 @@ namespace Sinav_Sistemi
                     this.Hide();
                     main.Show();
                 }
+                else if (user.UserTypeId == 1)
+                {
+                    ÖğrenciGirişMain main = new ÖğrenciGirişMain();
+                    this.Hide();
+                    main.Show();
+                }
+                else
+                {
+                    ÖğretmenGirişMain main = new ÖğretmenGirişMain();
+                    this.Hide();
+                    main.Show();
+                }
             }
             else
             {

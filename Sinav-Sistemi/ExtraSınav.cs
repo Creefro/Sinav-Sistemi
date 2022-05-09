@@ -22,14 +22,14 @@ namespace Sinav_Sistemi
         {
             Questions questions = new Questions();
             ISoru soru;
-            soru = questions.GetQuestion(questions);
+            soru = questions.GetRandomQuestion(questions);
             queText.Text = soru.QuestionText;
             pictureBox1.Image = Image.FromFile(soru.PicturePath);
 
-            string[] labels = { ansA.Text, ansB.Text, ansC.Text, ansD.Text };
+            Label[] labels = { ansA, ansB, ansC, ansD};
             int[] wrongs = new int[3];
 
-            int a = random.Next(0, 3);
+            int a = random.Next(0, 4);
 
             if (a == 0)
                 wrongs = new int[] { 1, 2, 3 };
@@ -40,11 +40,16 @@ namespace Sinav_Sistemi
             else if (a == 3)
                 wrongs = new int[] { 0, 1, 2 };
 
-            labels[a] = soru.RightAnswer;
+            labels[a].Text = soru.RightAnswer;
+            
+            labels[wrongs[0]].Text = soru.WrongAnswer1;
+            labels[wrongs[1]].Text = soru.WrongAnswer1;
+            labels[wrongs[2]].Text = soru.WrongAnswer1;
+        }
 
-            labels[wrongs[0]] = soru.WrongAnswer1;
-            labels[wrongs[1]] = soru.WrongAnswer1;
-            labels[wrongs[2]] = soru.WrongAnswer1;
+        private void secim_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 } 
