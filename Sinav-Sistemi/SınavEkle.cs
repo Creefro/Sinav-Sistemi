@@ -46,5 +46,12 @@ namespace Sinav_Sistemi
             }
             
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ÖğretmenGirişMain main = new ÖğretmenGirişMain();
+            this.Hide();
+            main.Show();
+        }
     }
 }

@@ -52,7 +52,9 @@ namespace Sinav_Sistemi
                 if (result)
                 {
                     MessageBox.Show("Şifre başarıyla değiştirildi.");
-                    return;
+                    GirişEkranı main = new GirişEkranı();
+                    this.Hide();
+                    main.Show();
                 }
                 else
                 {
