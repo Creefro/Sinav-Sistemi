@@ -17,39 +17,52 @@ namespace Sinav_Sistemi
             InitializeComponent();
         }
         static Random random = new Random();
-
+        int sayac;
         private void nextQueButton_Click(object sender, EventArgs e)
         {
             Questions questions = new Questions();
-            ISoru soru;
-            soru = questions.GetRandomQuestion(questions);
-            queText.Text = soru.QuestionText;
-            pictureBox1.Image = Image.FromFile(soru.PicturePath);
+            List<ISoru> RastgeleSorular = questions.GetRandomQuestion(questions);
+            if (sayac < RastgeleSorular.Count())
+            {
+                var item = RastgeleSorular.ElementAt(sayac);
+                queText.Text = item.QuestionText;
+                pictureBox1.Image = Image.FromFile(item.PicturePath);
 
-            Label[] labels = { ansA, ansB, ansC, ansD};
-            int[] wrongs = new int[3];
+                Label[] label = { ansA, ansB, ansC, ansD };
+                int[] wrong = new int[3];
 
-            int a = random.Next(0, 4);
+                int rand = random.Next(0, 4);
 
-            if (a == 0)
-                wrongs = new int[] { 1, 2, 3 };
-            else if (a == 1)
-                wrongs = new int[] { 0, 2, 3 };
-            else if (a == 2)
-                wrongs = new int[] { 0, 1, 3 };
-            else if (a == 3)
-                wrongs = new int[] { 0, 1, 2 };
+                if (rand == 0)
+                    wrong = new int[] { 1, 2, 3 };
+                else if (rand == 1)
+                    wrong = new int[] { 0, 2, 3 };
+                else if (rand == 2)
+                    wrong = new int[] { 0, 1, 3 };
+                else if (rand == 3)
+                    wrong = new int[] { 0, 1, 2 };
 
-            labels[a].Text = soru.RightAnswer;
-            
-            labels[wrongs[0]].Text = soru.WrongAnswer1;
-            labels[wrongs[1]].Text = soru.WrongAnswer1;
-            labels[wrongs[2]].Text = soru.WrongAnswer1;
+                label[rand].Text = item.RightAnswer;
+
+                label[wrong[0]].Text = item.WrongAnswer1;
+                label[wrong[1]].Text = item.WrongAnswer2;
+                label[wrong[2]].Text = item.WrongAnswer3;
+                sayac++;
+            }
+            else
+            {
+                //sınav bitti
+            }
         }
 
         private void secim_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void ExtraSınav_Load(object sender, EventArgs e)
+        {
+            sayac = 0;
         }
     }
 } 

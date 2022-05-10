@@ -117,6 +117,7 @@ namespace Sinav_Sistemi
             this.Controls.Add(this.pictureBox1);
             this.Name = "ExtraSınav";
             this.Text = "ExtraSınav";
+            this.Load += new System.EventHandler(this.ExtraSınav_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

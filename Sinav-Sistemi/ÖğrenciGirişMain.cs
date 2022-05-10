@@ -23,5 +23,17 @@ namespace Sinav_Sistemi
             this.Hide();
             main.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Sigma main = new Sigma();
+            this.Hide();
+            main.Show();
+        }
+
+        private void ÖğrenciGirişMain_Load(object sender, EventArgs e)
+        {
+            label1.Text = GirişEkranı.user.Ad+" "+GirişEkranı.user.Soyad;
+        }
     }
 }

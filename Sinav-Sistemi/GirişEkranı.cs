@@ -13,7 +13,6 @@ namespace Sinav_Sistemi
 {
     public partial class GirişEkranı : Form
     {
-        
         public GirişEkranı()
         {
             InitializeComponent();
@@ -23,7 +22,7 @@ namespace Sinav_Sistemi
         {
         }
 
-        public Users user;
+        public static Users user;
         public UserProvider giris;
         private void girisYap_Click(object sender, EventArgs e)
         {
