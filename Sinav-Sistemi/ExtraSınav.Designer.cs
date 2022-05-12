@@ -60,11 +60,11 @@ namespace Sinav_Sistemi
             // 
             // nextQueButton
             // 
-            this.nextQueButton.Location = new System.Drawing.Point(713, 483);
+            this.nextQueButton.Location = new System.Drawing.Point(682, 483);
             this.nextQueButton.Name = "nextQueButton";
-            this.nextQueButton.Size = new System.Drawing.Size(75, 31);
+            this.nextQueButton.Size = new System.Drawing.Size(110, 31);
             this.nextQueButton.TabIndex = 2;
-            this.nextQueButton.Text = "Next";
+            this.nextQueButton.Text = "Sonraki Soru";
             this.nextQueButton.UseVisualStyleBackColor = true;
             this.nextQueButton.Click += new System.EventHandler(this.nextQueButton_Click);
             // 
@@ -110,11 +110,11 @@ namespace Sinav_Sistemi
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(617, 483);
+            this.button1.Location = new System.Drawing.Point(543, 483);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 31);
+            this.button1.Size = new System.Drawing.Size(110, 31);
             this.button1.TabIndex = 7;
-            this.button1.Text = "button1";
+            this.button1.Text = "Cevabı Kaydet";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

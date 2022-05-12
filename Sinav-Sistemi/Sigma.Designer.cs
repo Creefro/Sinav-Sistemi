@@ -44,11 +44,11 @@ namespace Sinav_Sistemi
             // 
             // nextQueButton
             // 
-            this.nextQueButton.Location = new System.Drawing.Point(713, 491);
+            this.nextQueButton.Location = new System.Drawing.Point(678, 491);
             this.nextQueButton.Name = "nextQueButton";
-            this.nextQueButton.Size = new System.Drawing.Size(75, 31);
+            this.nextQueButton.Size = new System.Drawing.Size(110, 31);
             this.nextQueButton.TabIndex = 9;
-            this.nextQueButton.Text = "Next";
+            this.nextQueButton.Text = "Sonraki Soru";
             this.nextQueButton.UseVisualStyleBackColor = true;
             this.nextQueButton.Click += new System.EventHandler(this.nextQueButton_Click);
             // 
@@ -108,21 +108,21 @@ namespace Sinav_Sistemi
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(612, 495);
+            this.button1.Location = new System.Drawing.Point(547, 491);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(110, 31);
             this.button1.TabIndex = 14;
-            this.button1.Text = "button1";
+            this.button1.Text = "Cevabı Kaydet";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(531, 495);
+            this.button2.Location = new System.Drawing.Point(547, 491);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(110, 31);
             this.button2.TabIndex = 15;
-            this.button2.Text = "button2";
+            this.button2.Text = "Cevabı Kaydet";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
