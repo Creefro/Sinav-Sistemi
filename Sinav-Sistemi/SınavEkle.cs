@@ -49,7 +49,7 @@ namespace Sinav_Sistemi
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ÖğretmenGirişMain main = new ÖğretmenGirişMain();
+            GirişEkranı main = new GirişEkranı();
             this.Hide();
             main.Show();
         }

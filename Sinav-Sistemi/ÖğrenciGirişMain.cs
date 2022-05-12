@@ -34,8 +34,8 @@ namespace Sinav_Sistemi
         private void ÖğrenciGirişMain_Load(object sender, EventArgs e)
         {
             label1.Text = GirişEkranı.user.Ad + " " + GirişEkranı.user.Soyad;
-            if(ÖğrenciAyarlarMenü.st == null)
-            ÖğrenciAyarlarMenü.st = new string[] { "week","1","month","1","month","3","month","6","year","1"};
+            if(ÖğrenciAyarlarMenü.degisenAralık == null)
+            ÖğrenciAyarlarMenü.degisenAralık = new string[] { "week","1","month","1","month","3","month","6","year","1"};
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -43,6 +43,13 @@ namespace Sinav_Sistemi
             ÖğrenciAyarlarMenü main = new ÖğrenciAyarlarMenü();
             this.Hide();
             main.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            GirişEkranı girişEkranı = new GirişEkranı();
+            this.Hide();
+            girişEkranı.Show();
         }
     }
 }

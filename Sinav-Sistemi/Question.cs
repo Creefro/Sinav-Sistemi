@@ -113,33 +113,33 @@ namespace Sinav_Sistemi
         {
             SqlConnection connection = Helper.GetConnection("SinavSistemiDB");
             var _ogrenci = GetQuestion(ogrenci,soruId);
-            string[] st = ÖğrenciAyarlarMenü.st; 
+            string[] yeniAralık = ÖğrenciAyarlarMenü.degisenAralık; 
             string arttırmaTipi ="";
             int arttırmaSayısı = 0;
             if (_ogrenci.dogruSayac == 1)
             {
-                arttırmaTipi = st[0];
-                arttırmaSayısı = Convert.ToInt32(st[1]);
+                arttırmaTipi = yeniAralık[0];
+                arttırmaSayısı = Convert.ToInt32(yeniAralık[1]);
             }
             else if (_ogrenci.dogruSayac == 2)
             {
-                arttırmaTipi = st[2];
-                arttırmaSayısı = Convert.ToInt32(st[3]);
+                arttırmaTipi = yeniAralık[2];
+                arttırmaSayısı = Convert.ToInt32(yeniAralık[3]);
             }
             else if (_ogrenci.dogruSayac == 3)
             {
-                arttırmaTipi = st[4];
-                arttırmaSayısı = Convert.ToInt32(st[5]);
+                arttırmaTipi = yeniAralık[4];
+                arttırmaSayısı = Convert.ToInt32(yeniAralık[5]);
             }
             else if (_ogrenci.dogruSayac == 4)
             {
-                arttırmaTipi = st[6];
-                arttırmaSayısı = Convert.ToInt32(st[7]);
+                arttırmaTipi = yeniAralık[6];
+                arttırmaSayısı = Convert.ToInt32(yeniAralık[7]);
             }
             else if (_ogrenci.dogruSayac == 5)
             {
-                arttırmaTipi = st[8];
-                arttırmaSayısı = Convert.ToInt32(st[9]);
+                arttırmaTipi = yeniAralık[8];
+                arttırmaSayısı = Convert.ToInt32(yeniAralık[9]);
             }
             else
                 Console.WriteLine("Hata");

@@ -212,6 +212,13 @@ namespace Sinav_Sistemi
             selectedText = ((Button)sender).Text;
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ÖğrenciGirişMain main = new ÖğrenciGirişMain();
+            this.Hide();
+            main.Show();
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             cvpButtonEnabled();

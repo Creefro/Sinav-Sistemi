@@ -12,7 +12,7 @@ namespace Sinav_Sistemi
 {
     public partial class ÖğrenciAyarlarMenü : Form
     {
-        public static string[] st;
+        public static string[] degisenAralık;
         public ÖğrenciAyarlarMenü()
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace Sinav_Sistemi
             var buttons2 = getButton(groupBox3);
             var buttons3 = getButton(groupBox4);
             var buttons4 = getButton(groupBox5);
-            st = new string[10] { buttons.Text, numericUpDown1.Value.ToString(), buttons1.Text, numericUpDown2.Value.ToString(), buttons2.Text, numericUpDown3.Value.ToString(), buttons3.Text, numericUpDown4.Value.ToString(), buttons4.Text, numericUpDown4.Value.ToString() };
+            degisenAralık = new string[10] { buttons.Text, numericUpDown1.Value.ToString(), buttons1.Text, numericUpDown2.Value.ToString(), buttons2.Text, numericUpDown3.Value.ToString(), buttons3.Text, numericUpDown4.Value.ToString(), buttons4.Text, numericUpDown4.Value.ToString() };
            
         }
 
