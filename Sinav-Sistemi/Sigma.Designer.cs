@@ -32,22 +32,18 @@ namespace Sinav_Sistemi
             this.nextQueButton = new System.Windows.Forms.Button();
             this.queText = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ansA = new System.Windows.Forms.RadioButton();
-            this.ansC = new System.Windows.Forms.RadioButton();
-            this.ansB = new System.Windows.Forms.RadioButton();
-            this.ansD = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.ansA = new System.Windows.Forms.Button();
+            this.ansB = new System.Windows.Forms.Button();
+            this.ansC = new System.Windows.Forms.Button();
+            this.ansD = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // nextQueButton
             // 
-            this.nextQueButton.Location = new System.Drawing.Point(713, 407);
+            this.nextQueButton.Location = new System.Drawing.Point(713, 491);
             this.nextQueButton.Name = "nextQueButton";
             this.nextQueButton.Size = new System.Drawing.Size(75, 31);
             this.nextQueButton.TabIndex = 9;
@@ -66,121 +62,81 @@ namespace Sinav_Sistemi
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(473, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(469, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(315, 206);
+            this.pictureBox1.Size = new System.Drawing.Size(319, 206);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
             // ansA
             // 
-            this.ansA.AutoSize = true;
-            this.ansA.Location = new System.Drawing.Point(22, 21);
+            this.ansA.Location = new System.Drawing.Point(468, 224);
             this.ansA.Name = "ansA";
-            this.ansA.Size = new System.Drawing.Size(17, 16);
-            this.ansA.TabIndex = 14;
-            this.ansA.TabStop = true;
+            this.ansA.Size = new System.Drawing.Size(320, 58);
+            this.ansA.TabIndex = 10;
             this.ansA.UseVisualStyleBackColor = true;
-            this.ansA.CheckedChanged += new System.EventHandler(this.Sik_CheckedChanged);
-            // 
-            // ansC
-            // 
-            this.ansC.AutoSize = true;
-            this.ansC.Location = new System.Drawing.Point(22, 123);
-            this.ansC.Name = "ansC";
-            this.ansC.Size = new System.Drawing.Size(17, 16);
-            this.ansC.TabIndex = 15;
-            this.ansC.TabStop = true;
-            this.ansC.UseVisualStyleBackColor = true;
-            this.ansC.CheckedChanged += new System.EventHandler(this.Sik_CheckedChanged);
+            this.ansA.Click += new System.EventHandler(this.ansA_Click);
             // 
             // ansB
             // 
-            this.ansB.AutoSize = true;
-            this.ansB.Location = new System.Drawing.Point(458, 21);
+            this.ansB.Location = new System.Drawing.Point(469, 288);
             this.ansB.Name = "ansB";
-            this.ansB.Size = new System.Drawing.Size(17, 16);
-            this.ansB.TabIndex = 16;
-            this.ansB.TabStop = true;
+            this.ansB.Size = new System.Drawing.Size(319, 58);
+            this.ansB.TabIndex = 11;
             this.ansB.UseVisualStyleBackColor = true;
-            this.ansB.CheckedChanged += new System.EventHandler(this.Sik_CheckedChanged);
+            this.ansB.Click += new System.EventHandler(this.ansA_Click);
+            // 
+            // ansC
+            // 
+            this.ansC.Location = new System.Drawing.Point(469, 352);
+            this.ansC.Name = "ansC";
+            this.ansC.Size = new System.Drawing.Size(319, 58);
+            this.ansC.TabIndex = 12;
+            this.ansC.UseVisualStyleBackColor = true;
+            this.ansC.Click += new System.EventHandler(this.ansA_Click);
             // 
             // ansD
             // 
-            this.ansD.AutoSize = true;
-            this.ansD.Location = new System.Drawing.Point(458, 123);
+            this.ansD.Location = new System.Drawing.Point(469, 416);
             this.ansD.Name = "ansD";
-            this.ansD.Size = new System.Drawing.Size(17, 16);
-            this.ansD.TabIndex = 17;
-            this.ansD.TabStop = true;
+            this.ansD.Size = new System.Drawing.Size(319, 58);
+            this.ansD.TabIndex = 13;
             this.ansD.UseVisualStyleBackColor = true;
-            this.ansD.CheckedChanged += new System.EventHandler(this.Sik_CheckedChanged);
+            this.ansD.Click += new System.EventHandler(this.ansA_Click);
             // 
-            // groupBox1
+            // button1
             // 
-            this.groupBox1.Controls.Add(this.ansB);
-            this.groupBox1.Controls.Add(this.ansC);
-            this.groupBox1.Controls.Add(this.ansD);
-            this.groupBox1.Controls.Add(this.ansA);
-            this.groupBox1.Location = new System.Drawing.Point(15, 256);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(692, 182);
-            this.groupBox1.TabIndex = 18;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.button1.Location = new System.Drawing.Point(612, 495);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // checkBox1
+            // button2
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(96, 74);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(98, 21);
-            this.checkBox1.TabIndex = 19;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(230, 74);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(98, 21);
-            this.checkBox2.TabIndex = 20;
-            this.checkBox2.Text = "checkBox2";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(110, 130);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(98, 21);
-            this.checkBox3.TabIndex = 21;
-            this.checkBox3.Text = "checkBox3";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(255, 128);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(98, 21);
-            this.checkBox4.TabIndex = 22;
-            this.checkBox4.Text = "checkBox4";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(531, 495);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Sigma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(816, 457);
-            this.Controls.Add(this.checkBox4);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(816, 534);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ansD);
+            this.Controls.Add(this.ansC);
+            this.Controls.Add(this.ansB);
+            this.Controls.Add(this.ansA);
             this.Controls.Add(this.nextQueButton);
             this.Controls.Add(this.queText);
             this.Controls.Add(this.pictureBox1);
@@ -188,8 +144,6 @@ namespace Sinav_Sistemi
             this.Text = "Sigma";
             this.Load += new System.EventHandler(this.Sigma_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,14 +153,11 @@ namespace Sinav_Sistemi
         private System.Windows.Forms.Button nextQueButton;
         private System.Windows.Forms.Label queText;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.RadioButton ansA;
-        private System.Windows.Forms.RadioButton ansC;
-        private System.Windows.Forms.RadioButton ansB;
-        private System.Windows.Forms.RadioButton ansD;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.Button ansA;
+        private System.Windows.Forms.Button ansB;
+        private System.Windows.Forms.Button ansC;
+        private System.Windows.Forms.Button ansD;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

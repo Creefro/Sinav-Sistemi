@@ -64,7 +64,7 @@ namespace Sinav_Sistemi
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(610, 9);
+            this.label1.Location = new System.Drawing.Point(410, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 17);
             this.label1.TabIndex = 3;
@@ -75,7 +75,7 @@ namespace Sinav_Sistemi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(683, 335);
+            this.ClientSize = new System.Drawing.Size(752, 335);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.button2);
