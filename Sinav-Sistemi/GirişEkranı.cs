@@ -32,19 +32,13 @@ namespace Sinav_Sistemi
             {
                 if (user.UserTypeId == 2)
                 {
-                    ÖğretmenGirişMain main = new ÖğretmenGirişMain();
+                    SınavEkle main = new SınavEkle();
                     this.Hide();
                     main.Show();
                 }
                 else if (user.UserTypeId == 1)
                 {
                     ÖğrenciGirişMain main = new ÖğrenciGirişMain();
-                    this.Hide();
-                    main.Show();
-                }
-                else
-                {
-                    ÖğretmenGirişMain main = new ÖğretmenGirişMain();
                     this.Hide();
                     main.Show();
                 }

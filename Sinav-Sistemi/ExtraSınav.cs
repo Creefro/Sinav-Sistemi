@@ -105,5 +105,12 @@ namespace Sinav_Sistemi
             selectedText = ((Button)sender).Text;
             button1.Enabled = true;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ÖğrenciGirişMain main = new ÖğrenciGirişMain();
+            this.Hide();
+            main.Show();
+        }
     }
 } 

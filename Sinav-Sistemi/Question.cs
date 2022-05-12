@@ -27,12 +27,12 @@ namespace Sinav_Sistemi
 
             return result;
         }
-        public Ogrenci GetQuestion(Users ogrenci)
+        public Ogrenci GetQuestion(Users ogrenci,int questionId)
         {
             Ogrenci _ogrenci = null;
             SqlConnection connection = Helper.GetConnection("SinavSistemiDB");
 
-            SqlCommand command = new SqlCommand("SELECT *FROM Ogrenci Where UserId = " + ogrenci.UserId + "");
+            SqlCommand command = new SqlCommand("SELECT *FROM Ogrenci Where UserId = " + ogrenci.UserId + "and QuestionId = "+questionId+"");
 
             command.Connection = connection;
             connection.Open();
@@ -112,33 +112,34 @@ namespace Sinav_Sistemi
         public void DogruSoruBilgiGuncelle(int soruId,Users ogrenci)
         {
             SqlConnection connection = Helper.GetConnection("SinavSistemiDB");
-            var _ogrenci = GetQuestion(ogrenci);
+            var _ogrenci = GetQuestion(ogrenci,soruId);
+            string[] yeniAralık = ÖğrenciAyarlarMenü.degisenAralık; 
             string arttırmaTipi ="";
             int arttırmaSayısı = 0;
             if (_ogrenci.dogruSayac == 1)
             {
-                arttırmaTipi = "week";
-                arttırmaSayısı = 1;
+                arttırmaTipi = yeniAralık[0];
+                arttırmaSayısı = Convert.ToInt32(yeniAralık[1]);
             }
             else if (_ogrenci.dogruSayac == 2)
             {
-                arttırmaTipi = "month";
-                arttırmaSayısı = 1;
+                arttırmaTipi = yeniAralık[2];
+                arttırmaSayısı = Convert.ToInt32(yeniAralık[3]);
             }
             else if (_ogrenci.dogruSayac == 3)
             {
-                arttırmaTipi = "month";
-                arttırmaSayısı = 3;
+                arttırmaTipi = yeniAralık[4];
+                arttırmaSayısı = Convert.ToInt32(yeniAralık[5]);
             }
             else if (_ogrenci.dogruSayac == 4)
             {
-                arttırmaTipi = "month";
-                arttırmaSayısı = 6;
+                arttırmaTipi = yeniAralık[6];
+                arttırmaSayısı = Convert.ToInt32(yeniAralık[7]);
             }
             else if (_ogrenci.dogruSayac == 5)
             {
-                arttırmaTipi = "year";
-                arttırmaSayısı = 1;
+                arttırmaTipi = yeniAralık[8];
+                arttırmaSayısı = Convert.ToInt32(yeniAralık[9]);
             }
             else
                 Console.WriteLine("Hata");
