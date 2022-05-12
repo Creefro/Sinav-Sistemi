@@ -18,8 +18,15 @@ namespace Sinav_Sistemi
         }
         static Random random = new Random();
         int sayac;
+        string answer;
+        string selectedText;
         private void nextQueButton_Click(object sender, EventArgs e)
         {
+            ansA.Enabled = true;
+            ansB.Enabled = true;
+            ansC.Enabled = true;
+            ansD.Enabled = true;
+            button1.Enabled = false;
             Questions questions = new Questions();
             List<ISoru> RastgeleSorular = questions.GetRandomQuestion(questions);
             if (sayac < RastgeleSorular.Count())
@@ -28,7 +35,7 @@ namespace Sinav_Sistemi
                 queText.Text = item.QuestionText;
                 pictureBox1.Image = Image.FromFile(item.PicturePath);
 
-                Label[] label = { ansA, ansB, ansC, ansD };
+                Button[] radioButtons = { ansA, ansB, ansC, ansD };
                 int[] wrong = new int[3];
 
                 int rand = random.Next(0, 4);
@@ -42,27 +49,51 @@ namespace Sinav_Sistemi
                 else if (rand == 3)
                     wrong = new int[] { 0, 1, 2 };
 
-                label[rand].Text = item.RightAnswer;
+                radioButtons[rand].Text = item.RightAnswer;
 
-                label[wrong[0]].Text = item.WrongAnswer1;
-                label[wrong[1]].Text = item.WrongAnswer2;
-                label[wrong[2]].Text = item.WrongAnswer3;
+                radioButtons[wrong[0]].Text = item.WrongAnswer1;
+                radioButtons[wrong[1]].Text = item.WrongAnswer2;
+                radioButtons[wrong[2]].Text = item.WrongAnswer3;
                 sayac++;
+                answer = item.RightAnswer;
             }
             else
             {
-                //sınav bitti
+                MessageBox.Show("Sınav Bitti!");
+                ÖğrenciGirişMain main = new ÖğrenciGirişMain();
+                this.Hide();
+                main.Show();
             }
-        }
-
-        private void secim_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void ExtraSınav_Load(object sender, EventArgs e)
         {
             sayac = 0;
+            ansA.Enabled = false;
+            ansB.Enabled = false;
+            ansC.Enabled = false;
+            ansD.Enabled = false;
+            button1.Enabled = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ansA.Enabled = false;
+            ansB.Enabled = false;
+            ansC.Enabled = false;
+            ansD.Enabled = false;
+            if (selectedText == answer)
+            {
+                MessageBox.Show("Doğru Cevap!");
+            }
+            else
+                MessageBox.Show("Yanlış Cevap!");
+        }
+
+        private void ansA_Click(object sender, EventArgs e)
+        {
+            selectedText = ((Button)sender).Text;
+            button1.Enabled = true;
         }
     }
 } 

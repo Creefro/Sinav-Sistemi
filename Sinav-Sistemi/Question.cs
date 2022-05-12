@@ -27,31 +27,27 @@ namespace Sinav_Sistemi
 
             return result;
         }
-        public ISoru GetQuestion(ISoru question)
+        public Ogrenci GetQuestion(Users ogrenci)
         {
+            Ogrenci _ogrenci = null;
             SqlConnection connection = Helper.GetConnection("SinavSistemiDB");
 
-            SqlCommand command = new SqlCommand("SELECT * FROM Questions");
-           
+            SqlCommand command = new SqlCommand("SELECT *FROM Ogrenci Where UserId = " + ogrenci.UserId + "");
+
             command.Connection = connection;
             connection.Open();
             SqlDataReader reader = command.ExecuteReader();
             
             while (reader.Read())
             {
-                question.QuestionId = reader.GetInt32(0);
-                question.QuestionText = reader.GetString(1);
-                question.SectionId = reader.GetInt32(2);
-                question.UnitId = reader.GetInt32(3);
-                question.PicturePath = reader.GetString(4);
-                question.RightAnswer = reader.GetString(5);
-                question.WrongAnswer1 = reader.GetString(6);
-                question.WrongAnswer2 = reader.GetString(7);
-                question.WrongAnswer3 = reader.GetString(8);
+                _ogrenci = new Ogrenci();
+                _ogrenci.dogruSayac = reader.GetInt32(2);
+                _ogrenci.sonCozulme = reader.GetDateTime(3);
+                _ogrenci.sonrakiCozulme = reader.GetDateTime(4);
             }
             connection.Close();
 
-            return question;
+            return _ogrenci;
         }
         public List<ISoru> GetRandomQuestion(ISoru question)
         {
@@ -83,12 +79,12 @@ namespace Sinav_Sistemi
 
             return questions;
         }
-        public List<ISoru> Function(Users ogrenci)
+        public List<ISoru> BilinenSoruGetir(Users ogrenci)
         {
             List<ISoru> questions = new List<ISoru>();
             SqlConnection connection = Helper.GetConnection("SinavSistemiDB");
-
-            SqlCommand command = new SqlCommand("SELECT *FROM Ogrenci O INNER JOIN Users U ON U.UserId=O.UserId Inner join Questions Q ON o.QuestionId = q.QuestionId  AND U.UserId = " + ogrenci.UserId + " and q.AdminOnay=1 ",connection);
+            
+            SqlCommand command = new SqlCommand("SELECT *FROM Ogrenci O INNER JOIN Users U ON U.UserId=O.UserId Inner join Questions Q ON o.QuestionId = q.QuestionId  AND U.UserId = " + ogrenci.UserId + " and q.AdminOnay=1 and o.SonrakiCozulme=CAST( GETDATE() AS Date )", connection);
 
             command.CommandType = System.Data.CommandType.Text;
             connection.Open();
@@ -112,6 +108,75 @@ namespace Sinav_Sistemi
             }
             connection.Close();
             return questions;
+        }
+        public void DogruSoruBilgiGuncelle(int soruId,Users ogrenci)
+        {
+            SqlConnection connection = Helper.GetConnection("SinavSistemiDB");
+            var _ogrenci = GetQuestion(ogrenci);
+            string arttırmaTipi ="";
+            int arttırmaSayısı = 0;
+            if (_ogrenci.dogruSayac == 1)
+            {
+                arttırmaTipi = "week";
+                arttırmaSayısı = 1;
+            }
+            else if (_ogrenci.dogruSayac == 2)
+            {
+                arttırmaTipi = "month";
+                arttırmaSayısı = 1;
+            }
+            else if (_ogrenci.dogruSayac == 3)
+            {
+                arttırmaTipi = "month";
+                arttırmaSayısı = 3;
+            }
+            else if (_ogrenci.dogruSayac == 4)
+            {
+                arttırmaTipi = "month";
+                arttırmaSayısı = 6;
+            }
+            else if (_ogrenci.dogruSayac == 5)
+            {
+                arttırmaTipi = "year";
+                arttırmaSayısı = 1;
+            }
+            else
+                Console.WriteLine("Hata");
+
+            SqlCommand command = new SqlCommand("UPDATE Ogrenci SET DogruSayac =" + (_ogrenci.dogruSayac + 1) + ", SonCozulme = GETDATE(), SonrakiCozulme = DATEADD("+arttırmaTipi+"," +arttırmaSayısı+",SonrakiCozulme) WHERE QuestionId = " + soruId + " and UserId="+ ogrenci.UserId+"");
+
+            command.Connection = connection;
+            connection.Open();
+
+            command.ExecuteNonQuery();
+            
+            connection.Close();
+        }
+        public void YanlışSoruSil(int soruId, Users ogrenci)
+        {
+            SqlConnection connection = Helper.GetConnection("SinavSistemiDB");
+            
+            SqlCommand command = new SqlCommand("Delete from Ogrenci where UserId ="+ogrenci.UserId+" and QuestionId ="+soruId+"");
+
+            command.Connection = connection;
+            connection.Open();
+
+            command.ExecuteNonQuery();
+
+            connection.Close();
+        }
+        public void BilinenSoruEkle(Users ogrenciId,int questionId)
+        {
+            SqlConnection connection = Helper.GetConnection("SinavSistemiDB");
+
+            SqlCommand command = new SqlCommand("INSERT INTO Ogrenci (UserId,QuestionId,DogruSayac,SonCozulme,SonrakiCozulme) VALUES (" + ogrenciId.UserId + "," + questionId + ",1,GETDATE(),DATEADD(day,1,GETDATE()))");
+
+            command.Connection = connection;
+            connection.Open();
+
+            command.ExecuteNonQuery();
+
+            connection.Close();
         }
     }                                       
 }
