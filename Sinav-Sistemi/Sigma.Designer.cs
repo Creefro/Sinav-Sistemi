@@ -38,6 +38,7 @@ namespace Sinav_Sistemi
             this.ansD = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.countDownTimer = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,12 +126,23 @@ namespace Sinav_Sistemi
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // countDownTimer
+            // 
+            this.countDownTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.countDownTimer.Location = new System.Drawing.Point(12, 491);
+            this.countDownTimer.Name = "countDownTimer";
+            this.countDownTimer.Size = new System.Drawing.Size(124, 30);
+            this.countDownTimer.TabIndex = 16;
+            this.countDownTimer.Text = "00:00:00";
+            this.countDownTimer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Sigma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(816, 534);
+            this.Controls.Add(this.countDownTimer);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.ansD);
@@ -159,5 +171,6 @@ namespace Sinav_Sistemi
         private System.Windows.Forms.Button ansD;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox countDownTimer;
     }
 }

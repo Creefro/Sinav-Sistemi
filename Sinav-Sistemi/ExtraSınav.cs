@@ -17,9 +17,10 @@ namespace Sinav_Sistemi
             InitializeComponent();
         }
         static Random random = new Random();
-        int sayac;
+        int sayac = 0;
         string answer;
         string selectedText;
+        int dogruSayac = 0;
         private void nextQueButton_Click(object sender, EventArgs e)
         {
             ansA.Enabled = true;
@@ -27,6 +28,7 @@ namespace Sinav_Sistemi
             ansC.Enabled = true;
             ansD.Enabled = true;
             button1.Enabled = false;
+            
             Questions questions = new Questions();
             List<ISoru> RastgeleSorular = questions.GetRandomQuestion(questions);
             if (sayac < RastgeleSorular.Count())
@@ -59,10 +61,16 @@ namespace Sinav_Sistemi
             }
             else
             {
-                MessageBox.Show("Sınav Bitti!");
+                MessageBox.Show("Sınav Bitti! Doğru sayısı: "+dogruSayac+" Yanlış sayısı: "+(sayac-dogruSayac)+"");
                 ÖğrenciGirişMain main = new ÖğrenciGirişMain();
                 this.Hide();
                 main.Show();
+                ansA.Enabled = false;
+                ansB.Enabled = false;
+                ansC.Enabled = false;
+                ansD.Enabled = false;
+                button1.Enabled = false;
+                nextQueButton.Enabled = false;
             }
         }
 
@@ -82,9 +90,11 @@ namespace Sinav_Sistemi
             ansB.Enabled = false;
             ansC.Enabled = false;
             ansD.Enabled = false;
+            button1.Enabled = false;
             if (selectedText == answer)
             {
                 MessageBox.Show("Doğru Cevap!");
+                dogruSayac++;
             }
             else
                 MessageBox.Show("Yanlış Cevap!");

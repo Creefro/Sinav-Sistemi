@@ -13,6 +13,9 @@ namespace Sinav_Sistemi
 {
     public partial class Sigma : Form
     {
+        System.Timers.Timer timer;
+        int hour, minute = 10, second;
+        bool isTimerOn;
         public Sigma()
         {
             InitializeComponent();
@@ -25,6 +28,8 @@ namespace Sinav_Sistemi
         int questionId;
         private void nextQueButton_Click(object sender, EventArgs e)
         {
+            
+
             ansA.Enabled = true;
             ansB.Enabled = true;
             ansC.Enabled = true;
@@ -32,6 +37,7 @@ namespace Sinav_Sistemi
             button1.Enabled = true;
             button1.Visible = true;
             button2.Visible = false;
+            nextQueButton.Enabled = false;
             random = new Random();
             Questions questions = new Questions();
             List<ISoru> sorular = questions.BilinenSoruGetir(GirişEkranı.user);
@@ -73,11 +79,9 @@ namespace Sinav_Sistemi
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            ansA.Enabled = false;
-            ansB.Enabled = false;
-            ansC.Enabled = false;
-            ansD.Enabled = false;
+            cvpButtonEnabled();
             button1.Enabled = false;
+
             if (selectedText == answer)
             {
                 questions.DogruSoruBilgiGuncelle(questionId, GirişEkranı.user);
@@ -98,6 +102,13 @@ namespace Sinav_Sistemi
         string rastgeleQuestionAnswer;
         private void RastgeleTest()
         {
+            if (!isTimerOn)
+            {
+                timer.Start();
+            }
+            else
+                isTimerOn = true;
+
             button2.Enabled = true;
             button2.Visible = true;
             button1.Visible = false;
@@ -137,6 +148,12 @@ namespace Sinav_Sistemi
                 ÖğrenciGirişMain main = new ÖğrenciGirişMain();
                 this.Hide();
                 main.Show();
+                ansA.Enabled = false;
+                ansB.Enabled = false;
+                ansC.Enabled = false;
+                ansD.Enabled = false;
+                button1.Enabled = false;
+                nextQueButton.Enabled = false;
             }
            
         }
@@ -152,6 +169,43 @@ namespace Sinav_Sistemi
             button1.Enabled = false;
             button2.Enabled = false;
 
+            timer = new System.Timers.Timer();
+            timer.Interval = 1000; //1s
+            timer.Elapsed += OnTimeEvent;
+            isTimerOn = false;
+        }
+        private void OnTimeEvent (object sender, System.Timers.ElapsedEventArgs e)
+        {
+            Invoke(new Action(() =>
+            {
+                if (second == 0)
+                {
+                    second = 60;
+                    minute -= 1;
+                }
+                if(minute == 0&&hour!=0)
+                {
+                    minute = 60;
+                    hour -= 1;
+                }
+                second -= 1;
+                countDownTimer.Text = string.Format("{0}:{1}:{2}", hour.ToString().PadLeft(2, '0'), minute.ToString().PadLeft(2, '0'), second.ToString().PadLeft(2,'0'));
+                if (minute == 0 && second == 0)
+                {
+                    timer.Stop();
+                    MessageBox.Show("Süre bitti!");
+                    ÖğrenciGirişMain main = new ÖğrenciGirişMain();
+                    Sigma sigma = this;
+                    sigma.Hide();
+                    main.Show();
+                    ansA.Enabled = false;
+                    ansB.Enabled = false;
+                    ansC.Enabled = false;
+                    ansD.Enabled = false;
+                    button1.Enabled = false;
+                    nextQueButton.Enabled = false;
+                }
+            }));
         }
         private void ansA_Click(object sender, EventArgs e)
         {
@@ -160,17 +214,23 @@ namespace Sinav_Sistemi
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ansA.Enabled = false;
-            ansB.Enabled = false;
-            ansC.Enabled = false;
-            ansD.Enabled = false;
+            cvpButtonEnabled();
             button2.Enabled = false;
+
             if (selectedText == rastgeleQuestionAnswer)
             {
                 questions.BilinenSoruEkle(GirişEkranı.user, rastgeleQuestionId);
             }
             else
                 Console.WriteLine("yanlış cevap");
+        }
+        private void cvpButtonEnabled()
+        {
+            ansA.Enabled = false;
+            ansB.Enabled = false;
+            ansC.Enabled = false;
+            ansD.Enabled = false;
+            nextQueButton.Enabled = true;
         }
     }
 }
