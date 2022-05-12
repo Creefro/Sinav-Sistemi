@@ -33,6 +33,7 @@ namespace Sinav_Sistemi
             this.button2 = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label1 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -71,11 +72,22 @@ namespace Sinav_Sistemi
             this.label1.Text = "label1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(655, 296);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(85, 27);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Ayarlar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // ÖğrenciGirişMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(752, 335);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.button2);
@@ -94,5 +106,6 @@ namespace Sinav_Sistemi
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button3;
     }
 }
