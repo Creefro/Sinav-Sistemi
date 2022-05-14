@@ -30,9 +30,8 @@ Sınav Hazırlık Modülü hazırladığınız yazılımda varmı?              
 Soru sıklığı değiştirme Modülü hazırladığınız yazılımda varmı?      |        EVET         |
 --------------------------------------------------------------------|---------------------|
 Analiz Rapor Modülü hazırladığınız yazılımda varmı?                 |        HAYIR        |
---------------------------------------------------------------------|---------------------|
+||
 Sınav Modülü hazırladığınız yazılımda varmı?                        |        EVET         |
---------------------------------------------------------------------|---------------------|
 
 **Gerçekleştirilen Opsiyonel İsterler**
 ------------------------------------------------- |
