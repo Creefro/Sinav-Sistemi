@@ -18,6 +18,7 @@ namespace Sinav_Sistemi
         }
         public bool InsertQuestion(Questions question)
         {
+            //soru ekle
             bool result = false;
             
             SqlConnection connection = Helper.GetConnection("SinavSistemiDB");

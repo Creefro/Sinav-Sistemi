@@ -26,8 +26,11 @@ namespace Sinav_Sistemi
             ansA.Visible = true; ansB.Visible = true; ansC.Visible = true; ansD.Visible = true;
             ansA.Enabled = true; ansB.Enabled = true; ansC.Enabled = true; ansD.Enabled = true;
             button1.Visible = false;
+
             Questions questions = new Questions();
             List<ISoru> RastgeleSorular = questions.GetRandomQuestion(questions);
+            //sorular db den listeye çekilir
+            //liste boyutu kadar döndürülür
             if (sayac < RastgeleSorular.Count())
             {
                 var item = RastgeleSorular.ElementAt(sayac);
@@ -37,7 +40,7 @@ namespace Sinav_Sistemi
                 Button[] radioButtons = { ansA, ansB, ansC, ansD };
                 int[] wrong = new int[3];
 
-                int rand = random.Next(0, 4);
+                int rand = random.Next(0, 4);//şıkları rastgele ayarlar
 
                 if (rand == 0)
                     wrong = new int[] { 1, 2, 3 };

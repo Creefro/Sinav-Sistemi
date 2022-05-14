@@ -38,6 +38,7 @@ namespace Sinav_Sistemi
             label1.Text = GirişEkranı.user.Ad + " " + GirişEkranı.user.Soyad;
             if(ÖğrenciAyarlarMenü.degisenAralık == null)
             ÖğrenciAyarlarMenü.degisenAralık = new string[] { "week","1","month","1","month","3","month","6","year","1"};
+            //her seferinde default soru aralığını getirir.
         }
 
 

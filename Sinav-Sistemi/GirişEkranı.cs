@@ -44,6 +44,8 @@ namespace Sinav_Sistemi
                     main.Location = this.Location;
                     main.Show();
                 }
+                else
+                    MessageBox.Show("Hata!");
             }
             else
             {

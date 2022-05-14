@@ -10,11 +10,11 @@ namespace Sinav_Sistemi
     {
         //Factory
         public abstract ISoru SoruOluştur(string text, int sectionId, int unitId, string picturePath, string rightAnswer, string wrongAnswer1, string wrongAnswer2, string wrongAnswer3);
-        public bool SomeOperation(string text, int sectionId, int unitId, string picturePath, string rightAnswer, string wrongAnswer1, string wrongAnswer2, string wrongAnswer3)
+        public bool SoruyuKaydet(string text, int sectionId, int unitId, string picturePath, string rightAnswer, string wrongAnswer1, string wrongAnswer2, string wrongAnswer3)
         {
-            // Call the factory method to create a Product object.
+            //soruyu oluşturur
             var product = SoruOluştur(text, sectionId, unitId, picturePath, rightAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3);
-            // Now, use the product.
+            
             var result = product.InsertQuestion(product);
             
             return result;

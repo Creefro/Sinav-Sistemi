@@ -17,16 +17,17 @@ namespace Sinav_Sistemi
         {
             InitializeComponent();
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void Kaydet_Click(object sender, EventArgs e)
         {
-            func();
+            SoruSıklıkDegistir();
             ÖğrenciGirişMain öğrenciGirişMain = new ÖğrenciGirişMain();
             this.Hide();
             öğrenciGirişMain.Location = this.Location;
             öğrenciGirişMain.Show();
         }
-        void func()
+        void SoruSıklıkDegistir()
         {
+            //soru görme sıklığını değiştirir
             var buttons = getButton(groupBox1);
             var buttons1 = getButton(groupBox2);
             var buttons2 = getButton(groupBox3);
@@ -52,6 +53,7 @@ namespace Sinav_Sistemi
 
         private void ÖğrenciAyarlarMenü_Load(object sender, EventArgs e)
         {
+            //default sıklık ayarını getirir
             radioButton2.Checked = true;
             radioButton6.Checked = true;
             radioButton10.Checked = true;

@@ -26,7 +26,7 @@ namespace Sinav_Sistemi
         int rastgeleSayac;
         string selectedText,answer;
         int questionId;
-        int dogruSayac = 0;//,toplamSoruSayac = 0;
+        int dogruSayac = 0;
         int sayac;
         private void nextQueButton_Click(object sender, EventArgs e)
         {
@@ -56,6 +56,7 @@ namespace Sinav_Sistemi
             if (!isTimerOn)
             {
                 timer.Start();
+                //10 soruluk quiz için timer başlatır
             }
             else
                 isTimerOn = true;
@@ -80,8 +81,10 @@ namespace Sinav_Sistemi
             rastgeleSayac = 0;
             sayac = 0;
             dogruSayac = 0;
-            sorular = questions.BilinenSoruGetir(GirişEkranı.user);
-            RastgeleSorular = questions.GetRandomQuestion(questions);
+
+            sorular = questions.BilinenSoruGetir(GirişEkranı.user); //sigma sorularını listeye atar
+            RastgeleSorular = questions.GetRandomQuestion(questions);// rastgele 10 soruyu listeye atar
+
             ansA.Visible = false; ansB.Visible = false; ansC.Visible = false; ansD.Visible = false;
             sigmaButton.Visible = false;
             quizButton.Visible = false;
@@ -93,6 +96,7 @@ namespace Sinav_Sistemi
         }
         private void OnTimeEvent (object sender, System.Timers.ElapsedEventArgs e)
         {
+            // countdown algoritması
             Invoke(new Action(() =>
             {
                 if (second == 0)
@@ -147,7 +151,7 @@ namespace Sinav_Sistemi
             cvpButtonEnabled();
             sigmaButton.Enabled = false;
 
-            if (selectedText == answer)
+            if (selectedText == answer)//seçilen cevap doğruysa
             {
                 dogruSayac++;
                 questions.DogruSoruBilgiGuncelle(questionId, GirişEkranı.user);
@@ -163,7 +167,7 @@ namespace Sinav_Sistemi
             cvpButtonEnabled();
             quizButton.Enabled = false;
 
-            if (selectedText == rastgeleQuestionAnswer)
+            if (selectedText == rastgeleQuestionAnswer)//seçilen cevap doğruysa
             {
                 dogruSayac++;
                 questions.BilinenSoruEkle(GirişEkranı.user, rastgeleQuestionId);
@@ -188,7 +192,7 @@ namespace Sinav_Sistemi
         }
         void RastgeleSoruGetir()
         {
-             var item = RastgeleSorular.ElementAt(rastgeleSayac);
+             var item = RastgeleSorular.ElementAt(rastgeleSayac);// listedeki rastgeleSayaç numaralı soruyu getir
                 queText.Text = item.QuestionText;
                 pictureBox1.Image = Image.FromFile(item.PicturePath);
 
@@ -211,6 +215,9 @@ namespace Sinav_Sistemi
                 radioButtons[wrong[0]].Text = item.WrongAnswer1;
                 radioButtons[wrong[1]].Text = item.WrongAnswer2;
                 radioButtons[wrong[2]].Text = item.WrongAnswer3;
+
+                //şıklar rastgele karıştırıldı
+
                 rastgeleSayac++;
                 rastgeleQuestionAnswer = item.RightAnswer;
                 rastgeleQuestionId = item.QuestionId;
@@ -218,7 +225,7 @@ namespace Sinav_Sistemi
         }
         void SoruGetir()
         {
-            var item = sorular.ElementAt(sayac);
+            var item = sorular.ElementAt(sayac); //listedeki sayac numaralı sigma sorusunu getirir
             queText.Text = item.QuestionText;
             pictureBox1.Image = Image.FromFile(item.PicturePath);
 
@@ -240,6 +247,9 @@ namespace Sinav_Sistemi
             siklar[wrongs[0]].Text = item.WrongAnswer1;
             siklar[wrongs[1]].Text = item.WrongAnswer2;
             siklar[wrongs[2]].Text = item.WrongAnswer3;
+
+            //şıklar rastgele karıştırıldı
+
             sayac++;
 
             answer = item.RightAnswer;

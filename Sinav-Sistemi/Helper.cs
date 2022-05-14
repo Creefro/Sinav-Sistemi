@@ -12,6 +12,7 @@ namespace Sinav_Sistemi
     {
         public static SqlConnection GetConnection(string name)
         {
+            // SQL veri tabanına bağlanmak için class
             return new SqlConnection(ConfigurationManager.ConnectionStrings[name].ConnectionString);
         }
     }

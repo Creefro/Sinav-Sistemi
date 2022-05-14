@@ -17,9 +17,6 @@ namespace Sinav_Sistemi
         {
             InitializeComponent();
         }
-
-        //public Users user;
-        //public UserProvider kayit;
         private void kayitOlButton_Click(object sender, EventArgs e)
         {
             UserProvider kayit = new UserProvider();

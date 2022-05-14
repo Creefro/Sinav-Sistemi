@@ -11,6 +11,7 @@ namespace Sinav_Sistemi
     {  
         public Users getUser(string kullaniciAdi, string password)
         {
+            // kullanıcıyı çeker
             Users user = null;
             SqlConnection connection = Helper.GetConnection("SinavSistemiDB");
                 
@@ -39,6 +40,7 @@ namespace Sinav_Sistemi
  
         private bool ContainsUser(Users user)
         {
+            //aynı kullanıcıyı kayıt etme
             bool result = false;
             using (var connection = Helper.GetConnection("SinavSistemiDB"))
             {
@@ -59,6 +61,7 @@ namespace Sinav_Sistemi
  
         public bool InsertUser(Users user)
         {
+            //kullanıcı kayıt
             bool result = false;
             if (!ContainsUser(user))
             {

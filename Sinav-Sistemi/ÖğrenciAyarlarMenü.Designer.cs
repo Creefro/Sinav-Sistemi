@@ -61,7 +61,7 @@ namespace Sinav_Sistemi
             this.radioButton18 = new System.Windows.Forms.RadioButton();
             this.radioButton19 = new System.Windows.Forms.RadioButton();
             this.radioButton20 = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Kaydet = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -485,17 +485,17 @@ namespace Sinav_Sistemi
             this.radioButton20.Text = "day";
             this.radioButton20.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // Kaydet
             // 
-            this.button1.BackColor = System.Drawing.Color.GhostWhite;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(450, 604);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 39);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Kaydet";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Kaydet.BackColor = System.Drawing.Color.GhostWhite;
+            this.Kaydet.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Kaydet.Location = new System.Drawing.Point(450, 604);
+            this.Kaydet.Name = "Kaydet";
+            this.Kaydet.Size = new System.Drawing.Size(100, 39);
+            this.Kaydet.TabIndex = 14;
+            this.Kaydet.Text = "Kaydet";
+            this.Kaydet.UseVisualStyleBackColor = false;
+            this.Kaydet.Click += new System.EventHandler(this.Kaydet_Click);
             // 
             // backButton
             // 
@@ -516,7 +516,7 @@ namespace Sinav_Sistemi
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(578, 662);
             this.Controls.Add(this.backButton);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Kaydet);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -580,7 +580,7 @@ namespace Sinav_Sistemi
         private System.Windows.Forms.RadioButton radioButton19;
         private System.Windows.Forms.RadioButton radioButton20;
         private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Kaydet;
         private System.Windows.Forms.Button backButton;
     }
 }

@@ -20,6 +20,7 @@ namespace Sinav_Sistemi
         
         private void button1_Click(object sender, EventArgs e)
         {
+            //soru görselini ekler
             OpenFileDialog f = new OpenFileDialog();
             f.Filter = "JPG (*.JPG)|*.jpg";
             if (f.ShowDialog() == DialogResult.OK)
@@ -34,7 +35,7 @@ namespace Sinav_Sistemi
         private void button3_Click(object sender, EventArgs e)
         {
             QuestionCreator creator = new SoruOluşturucu();
-            bool result = creator.SomeOperation(richTextBox1.Text, Convert.ToInt32(numericUpDown1.Value), Convert.ToInt32(numericUpDown2.Value), picpathlabel.Text, rightansTxBox.Text, textBox2.Text, textBox3.Text, textBox4.Text);
+            bool result = creator.SoruyuKaydet(richTextBox1.Text, Convert.ToInt32(numericUpDown1.Value), Convert.ToInt32(numericUpDown2.Value), picpathlabel.Text, rightansTxBox.Text, textBox2.Text, textBox3.Text, textBox4.Text);
 
             if (result)
             {

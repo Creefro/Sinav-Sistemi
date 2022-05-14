@@ -12,6 +12,7 @@ namespace Sinav_Sistemi
         //Concreate Product
         public override bool InsertQuestion(ISoru question)
         {
+            //yeni soru ekler
             bool result = false;
 
             SqlConnection connection = Helper.GetConnection("SinavSistemiDB");
@@ -29,6 +30,7 @@ namespace Sinav_Sistemi
         }
         public Ogrenci GetQuestion(Users ogrenci,int questionId)
         {
+            //Ogrenci tablosundan Soru Id sine bağlı soru çeker
             Ogrenci _ogrenci = null;
             SqlConnection connection = Helper.GetConnection("SinavSistemiDB");
 
@@ -51,6 +53,7 @@ namespace Sinav_Sistemi
         }
         public List<ISoru> GetRandomQuestion(ISoru question)
         {
+            // 10 soruluk quiz için soru çeker
             List<ISoru> questions = new List<ISoru>();
             SqlConnection connection = Helper.GetConnection("SinavSistemiDB");
 
@@ -81,6 +84,7 @@ namespace Sinav_Sistemi
         }
         public List<ISoru> BilinenSoruGetir(Users ogrenci)
         {
+            // sigma soruları için soru çeker
             List<ISoru> questions = new List<ISoru>();
             SqlConnection connection = Helper.GetConnection("SinavSistemiDB");
             
@@ -111,11 +115,13 @@ namespace Sinav_Sistemi
         }
         public void DogruSoruBilgiGuncelle(int soruId,Users ogrenci)
         {
+            // sigma sorusunu doğru bilince bir sonraki tarihe atar
             SqlConnection connection = Helper.GetConnection("SinavSistemiDB");
             var _ogrenci = GetQuestion(ogrenci,soruId);
             string[] yeniAralık = ÖğrenciAyarlarMenü.degisenAralık; 
             string arttırmaTipi ="";
             int arttırmaSayısı = 0;
+            // değişken soru görme tarihleri
             if (_ogrenci.dogruSayac == 1)
             {
                 arttırmaTipi = yeniAralık[0];
@@ -155,6 +161,7 @@ namespace Sinav_Sistemi
         }
         public void YanlışSoruSil(int soruId, Users ogrenci)
         {
+            //bilinen soruyu yanlış yaparsa db den siler
             SqlConnection connection = Helper.GetConnection("SinavSistemiDB");
             
             SqlCommand command = new SqlCommand("Delete from Ogrenci where UserId ="+ogrenci.UserId+" and QuestionId ="+soruId+"");
@@ -168,6 +175,7 @@ namespace Sinav_Sistemi
         }
         public void BilinenSoruEkle(Users ogrenciId,int questionId)
         {
+            //quizde soru bildiği zaman havuza ekler
             SqlConnection connection = Helper.GetConnection("SinavSistemiDB");
 
             SqlCommand command = new SqlCommand("INSERT INTO Ogrenci (UserId,QuestionId,DogruSayac,SonCozulme,SonrakiCozulme) VALUES (" + ogrenciId.UserId + "," + questionId + ",1,GETDATE(),DATEADD(day,1,GETDATE()))");
