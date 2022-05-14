@@ -39,5 +39,5 @@ Sınav Modülü hazırladığınız yazılımda varmı?                        |
 Anlık Doğru ve Hatalı Soruları Görme.             |
 Soruların Şıkları Rastgele Değişsin.              |
 Admin daha önceden onayladığı soruları çıkartsın. |
-                                                  |
+                                                  
 
