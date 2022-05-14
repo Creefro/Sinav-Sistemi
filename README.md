@@ -5,7 +5,7 @@ Examination system that intensifies the learning skills, inspired by 6-sigma tec
 #TR
 
 Geliştiriciler
-**Güney Kaya**
+**Güney Kaya**,
 **İzzet Emre Şen**
 
 Programı çalıştırın. Kayıt Ol butonuyla öğretmen veya öğrenci hesabı oluşturun. Bilgilerinizi girerek devam edin. Giriş yapın.
