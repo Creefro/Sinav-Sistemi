@@ -25,12 +25,12 @@ Soru çıkma sıklığını değiştirmek için ayarlar simgesine tıklayın.
 
 **İSTERLER GERÇEKLEŞTİRİLDİ**                                       |  **ÖĞRENCİ BEYANI** |
 --------------------------------------------------------------------|---------------------|
-Kullanıcı Kayıt Modülü hazırladığınız yazılımda varmı?              |        EVET         |
-Sınav Hazırlama Modülü hazırladığınız yazılımda varmı?              |        EVET         |
-Sınav Hazırlık Modülü hazırladığınız yazılımda varmı?               |        EVET         |
-Soru sıklığı değiştirme Modülü hazırladığınız yazılımda varmı?      |        EVET         |
-Analiz Rapor Modülü hazırladığınız yazılımda varmı?                 |        HAYIR        |
-Sınav Modülü hazırladığınız yazılımda varmı?                        |        EVET         |
+Kullanıcı Kayıt Modülü hazırladığınız yazılımda var mı?             |        EVET         |
+Sınav Hazırlama Modülü hazırladığınız yazılımda var mı?             |        EVET         |
+Sınav Hazırlık Modülü hazırladığınız yazılımda var mı?              |        EVET         |
+Soru Sıklığı Değiştirme Modülü hazırladığınız yazılımda var mı?     |        EVET         |
+Analiz Rapor Modülü hazırladığınız yazılımda var mı?                |        HAYIR        |
+Sınav Modülü hazırladığınız yazılımda var mı?                       |        EVET         |
 
 **Gerçekleştirilen Opsiyonel İsterler**
 ------------------------------------------------- |
