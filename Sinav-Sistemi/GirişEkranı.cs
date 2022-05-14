@@ -34,18 +34,20 @@ namespace Sinav_Sistemi
                 {
                     SınavEkle main = new SınavEkle();
                     this.Hide();
+                    main.Location = this.Location;
                     main.Show();
                 }
                 else if (user.UserTypeId == 1)
                 {
                     ÖğrenciGirişMain main = new ÖğrenciGirişMain();
                     this.Hide();
+                    main.Location = this.Location;
                     main.Show();
                 }
             }
             else
             {
-                MessageBox.Show("Kullanıcı Adı veya Şifre yanlış ama hangisi söylemem.");
+                MessageBox.Show("Kullanıcı adı veya şifre yanlış.", "Hata!");
             }
 
         }

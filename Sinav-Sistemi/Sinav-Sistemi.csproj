@@ -80,6 +80,11 @@
     <Compile Include="KayıtEkranı.Designer.cs">
       <DependentUpon>KayıtEkranı.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="QuestionCreator.cs" />
     <Compile Include="Sigma.cs">
       <SubType>Form</SubType>
@@ -99,12 +104,6 @@
     </Compile>
     <Compile Include="ÖğrenciGirişMain.Designer.cs">
       <DependentUpon>ÖğrenciGirişMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ÖğretmenGirişMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ÖğretmenGirişMain.Designer.cs">
-      <DependentUpon>ÖğretmenGirişMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Ogrenci.cs" />
     <Compile Include="Question.cs" />
@@ -149,18 +148,11 @@
     <EmbeddedResource Include="ÖğrenciGirişMain.resx">
       <DependentUpon>ÖğrenciGirişMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ÖğretmenGirişMain.resx">
-      <DependentUpon>ÖğretmenGirişMain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="SınavEkle.resx">
       <DependentUpon>SınavEkle.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +183,51 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\log-out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\halloween.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homepage.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-user.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\padlock.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\welcome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\welcome-back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\welcome %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

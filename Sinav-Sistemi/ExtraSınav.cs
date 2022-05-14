@@ -23,12 +23,9 @@ namespace Sinav_Sistemi
         int dogruSayac = 0;
         private void nextQueButton_Click(object sender, EventArgs e)
         {
-            ansA.Enabled = true;
-            ansB.Enabled = true;
-            ansC.Enabled = true;
-            ansD.Enabled = true;
-            button1.Enabled = false;
-            
+            ansA.Visible = true; ansB.Visible = true; ansC.Visible = true; ansD.Visible = true;
+            ansA.Enabled = true; ansB.Enabled = true; ansC.Enabled = true; ansD.Enabled = true;
+            button1.Visible = false;
             Questions questions = new Questions();
             List<ISoru> RastgeleSorular = questions.GetRandomQuestion(questions);
             if (sayac < RastgeleSorular.Count())
@@ -65,23 +62,17 @@ namespace Sinav_Sistemi
                 ÖğrenciGirişMain main = new ÖğrenciGirişMain();
                 this.Hide();
                 main.Show();
-                ansA.Enabled = false;
-                ansB.Enabled = false;
-                ansC.Enabled = false;
-                ansD.Enabled = false;
-                button1.Enabled = false;
-                nextQueButton.Enabled = false;
             }
         }
 
         private void ExtraSınav_Load(object sender, EventArgs e)
         {
             sayac = 0;
-            ansA.Enabled = false;
-            ansB.Enabled = false;
-            ansC.Enabled = false;
-            ansD.Enabled = false;
-            button1.Enabled = false;
+            ansA.Visible = false;
+            ansB.Visible = false;
+            ansC.Visible = false;
+            ansD.Visible = false;
+            button1.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -90,7 +81,7 @@ namespace Sinav_Sistemi
             ansB.Enabled = false;
             ansC.Enabled = false;
             ansD.Enabled = false;
-            button1.Enabled = false;
+            button1.Visible = false;
             if (selectedText == answer)
             {
                 MessageBox.Show("Doğru Cevap!");
@@ -103,13 +94,14 @@ namespace Sinav_Sistemi
         private void ansA_Click(object sender, EventArgs e)
         {
             selectedText = ((Button)sender).Text;
-            button1.Enabled = true;
+            button1.Visible = true;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             ÖğrenciGirişMain main = new ÖğrenciGirişMain();
             this.Hide();
+            main.Location = this.Location;
             main.Show();
         }
     }

@@ -17,17 +17,19 @@ namespace Sinav_Sistemi
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void extraButton_Click(object sender, EventArgs e)
         {
             ExtraSınav main = new ExtraSınav();
             this.Hide();
+            main.Location = this.Location;
             main.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void sigmaButton_Click(object sender, EventArgs e)
         {
             Sigma main = new Sigma();
-            this.Hide();
+            this.Hide(); 
+            main.Location = this.Location;
             main.Show();
         }
 
@@ -38,17 +40,20 @@ namespace Sinav_Sistemi
             ÖğrenciAyarlarMenü.degisenAralık = new string[] { "week","1","month","1","month","3","month","6","year","1"};
         }
 
-        private void button3_Click(object sender, EventArgs e)
+
+        private void settings_Click(object sender, EventArgs e)
         {
             ÖğrenciAyarlarMenü main = new ÖğrenciAyarlarMenü();
             this.Hide();
+            main.Location = this.Location;
             main.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void exit_Click(object sender, EventArgs e)
         {
             GirişEkranı girişEkranı = new GirişEkranı();
             this.Hide();
+            girişEkranı.Location = this.Location;
             girişEkranı.Show();
         }
     }

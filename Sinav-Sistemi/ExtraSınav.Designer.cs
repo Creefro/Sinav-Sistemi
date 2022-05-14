@@ -53,87 +53,96 @@ namespace Sinav_Sistemi
             // queText
             // 
             this.queText.AutoSize = true;
+            this.queText.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.queText.Location = new System.Drawing.Point(12, 12);
             this.queText.MaximumSize = new System.Drawing.Size(450, 0);
             this.queText.Name = "queText";
-            this.queText.Size = new System.Drawing.Size(0, 17);
+            this.queText.Size = new System.Drawing.Size(0, 19);
             this.queText.TabIndex = 1;
             // 
             // nextQueButton
             // 
-            this.nextQueButton.Location = new System.Drawing.Point(682, 483);
+            this.nextQueButton.BackColor = System.Drawing.Color.GhostWhite;
+            this.nextQueButton.Location = new System.Drawing.Point(672, 483);
             this.nextQueButton.Name = "nextQueButton";
-            this.nextQueButton.Size = new System.Drawing.Size(110, 31);
+            this.nextQueButton.Size = new System.Drawing.Size(120, 42);
             this.nextQueButton.TabIndex = 2;
-            this.nextQueButton.Text = "Sonraki Soru";
-            this.nextQueButton.UseVisualStyleBackColor = true;
+            this.nextQueButton.Text = "Yeni Soru";
+            this.nextQueButton.UseVisualStyleBackColor = false;
             this.nextQueButton.Click += new System.EventHandler(this.nextQueButton_Click);
             // 
             // ansA
             // 
+            this.ansA.BackColor = System.Drawing.Color.Snow;
+            this.ansA.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ansA.Location = new System.Drawing.Point(473, 242);
             this.ansA.Name = "ansA";
             this.ansA.Size = new System.Drawing.Size(319, 54);
             this.ansA.TabIndex = 3;
-            this.ansA.Text = "button1";
-            this.ansA.UseVisualStyleBackColor = true;
+            this.ansA.UseVisualStyleBackColor = false;
             this.ansA.Click += new System.EventHandler(this.ansA_Click);
             // 
             // ansB
             // 
+            this.ansB.BackColor = System.Drawing.Color.Snow;
+            this.ansB.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ansB.Location = new System.Drawing.Point(473, 302);
             this.ansB.Name = "ansB";
             this.ansB.Size = new System.Drawing.Size(319, 51);
             this.ansB.TabIndex = 4;
-            this.ansB.Text = "button2";
-            this.ansB.UseVisualStyleBackColor = true;
+            this.ansB.UseVisualStyleBackColor = false;
             this.ansB.Click += new System.EventHandler(this.ansA_Click);
             // 
             // ansC
             // 
+            this.ansC.BackColor = System.Drawing.Color.Snow;
+            this.ansC.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ansC.Location = new System.Drawing.Point(473, 416);
             this.ansC.Name = "ansC";
             this.ansC.Size = new System.Drawing.Size(319, 51);
             this.ansC.TabIndex = 5;
-            this.ansC.Text = "button3";
-            this.ansC.UseVisualStyleBackColor = true;
+            this.ansC.UseVisualStyleBackColor = false;
             this.ansC.Click += new System.EventHandler(this.ansA_Click);
             // 
             // ansD
             // 
+            this.ansD.BackColor = System.Drawing.Color.Snow;
+            this.ansD.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ansD.Location = new System.Drawing.Point(473, 359);
             this.ansD.Name = "ansD";
             this.ansD.Size = new System.Drawing.Size(319, 51);
             this.ansD.TabIndex = 6;
-            this.ansD.Text = "button4";
-            this.ansD.UseVisualStyleBackColor = true;
+            this.ansD.UseVisualStyleBackColor = false;
             this.ansD.Click += new System.EventHandler(this.ansA_Click);
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.GhostWhite;
             this.button1.Location = new System.Drawing.Point(543, 483);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 31);
+            this.button1.Size = new System.Drawing.Size(120, 42);
             this.button1.TabIndex = 7;
             this.button1.Text = "Cevabı Kaydet";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(15, 481);
+            this.button3.BackColor = System.Drawing.Color.GhostWhite;
+            this.button3.Location = new System.Drawing.Point(15, 483);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(128, 35);
+            this.button3.Size = new System.Drawing.Size(128, 42);
             this.button3.TabIndex = 18;
             this.button3.Text = "Sınavı Sonlandır";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // ExtraSınav
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 526);
+            this.BackColor = System.Drawing.Color.Lavender;
+            this.ClientSize = new System.Drawing.Size(800, 539);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.ansD);

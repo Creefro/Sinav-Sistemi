@@ -29,6 +29,7 @@ namespace Sinav_Sistemi
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KayıtEkranı));
             this.ogrenciRadioButton = new System.Windows.Forms.RadioButton();
             this.ogretmenRadioButton = new System.Windows.Forms.RadioButton();
             this.kayitOlButton = new System.Windows.Forms.Button();
@@ -75,7 +76,7 @@ namespace Sinav_Sistemi
             // 
             // kayitOlButton
             // 
-            this.kayitOlButton.BackColor = System.Drawing.Color.Snow;
+            this.kayitOlButton.BackColor = System.Drawing.Color.GhostWhite;
             this.kayitOlButton.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kayitOlButton.Location = new System.Drawing.Point(307, 388);
             this.kayitOlButton.Name = "kayitOlButton";
@@ -87,7 +88,7 @@ namespace Sinav_Sistemi
             // 
             // girisYapbttn
             // 
-            this.girisYapbttn.BackColor = System.Drawing.Color.Snow;
+            this.girisYapbttn.BackColor = System.Drawing.Color.GhostWhite;
             this.girisYapbttn.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.girisYapbttn.Location = new System.Drawing.Point(87, 388);
             this.girisYapbttn.Name = "girisYapbttn";
@@ -239,8 +240,9 @@ namespace Sinav_Sistemi
             this.Controls.Add(this.kayitOlButton);
             this.Controls.Add(this.ogretmenRadioButton);
             this.Controls.Add(this.ogrenciRadioButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "KayıtEkranı";
-            this.Text = "KayıtEkranı";
+            this.Text = "Kayıt Ol";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

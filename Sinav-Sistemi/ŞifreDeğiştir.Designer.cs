@@ -29,6 +29,7 @@ namespace Sinav_Sistemi
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ŞifreDeğiştir));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -100,7 +101,7 @@ namespace Sinav_Sistemi
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Snow;
+            this.button1.BackColor = System.Drawing.Color.GhostWhite;
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button1.Location = new System.Drawing.Point(339, 257);
             this.button1.Name = "button1";
@@ -131,11 +132,11 @@ namespace Sinav_Sistemi
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Snow;
+            this.button2.BackColor = System.Drawing.Color.GhostWhite;
             this.button2.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button2.Location = new System.Drawing.Point(53, 264);
+            this.button2.Location = new System.Drawing.Point(57, 257);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 35);
+            this.button2.Size = new System.Drawing.Size(110, 42);
             this.button2.TabIndex = 9;
             this.button2.Text = "Geri Dön";
             this.button2.UseVisualStyleBackColor = false;
@@ -157,6 +158,7 @@ namespace Sinav_Sistemi
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ŞifreDeğiştir";
             this.Text = "Şifre Değiştir";
             this.ResumeLayout(false);

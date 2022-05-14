@@ -23,6 +23,7 @@ namespace Sinav_Sistemi
             func();
             ÖğrenciGirişMain öğrenciGirişMain = new ÖğrenciGirişMain();
             this.Hide();
+            öğrenciGirişMain.Location = this.Location;
             öğrenciGirişMain.Show();
         }
         void func()
@@ -42,10 +43,11 @@ namespace Sinav_Sistemi
                             .FirstOrDefault(n => n.Checked);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void backButton_Click(object sender, EventArgs e)
         {
             ÖğrenciGirişMain öğrenciGirişMain = new ÖğrenciGirişMain();
             this.Hide();
+            öğrenciGirişMain.Location = this.Location;
             öğrenciGirişMain.Show();
         }
     }
