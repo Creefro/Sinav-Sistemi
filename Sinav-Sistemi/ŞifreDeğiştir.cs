@@ -21,17 +21,9 @@ namespace Sinav_Sistemi
         {
             UserProvider get = new UserProvider();
             
-            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "")
+            if (textBox1.Text == "" || textBox3.Text == "" || textBox4.Text == "")
             {
                 MessageBox.Show("Alanlar boş bırakılamaz!");
-                ŞifreDeğiştir frm = new ŞifreDeğiştir();
-                this.Hide();
-                frm.Show();
-                return;
-            }
-            else if (textBox2.Text == textBox3.Text)
-            {
-                MessageBox.Show("Yeni şifre mevcut şifre ile aynı olamaz!");
                 ŞifreDeğiştir frm = new ŞifreDeğiştir();
                 this.Hide();
                 frm.Show();
@@ -47,7 +39,7 @@ namespace Sinav_Sistemi
             }
             else
             {
-                bool result = get.ŞifreDeğiş(textBox1.Text, textBox2.Text, textBox3.Text);
+                bool result = get.ŞifreDeğiş(textBox1.Text, textBox3.Text);
 
                 if (result)
                 {
