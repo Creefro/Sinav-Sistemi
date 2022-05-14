@@ -76,7 +76,7 @@ namespace Sinav_Sistemi
             }
             return result;
         }
-        public bool ŞifreDeğiş(string kullanıcıAdı, string password,string newPassword)
+        public bool ŞifreDeğiş(string kullanıcıAdı,string newPassword)
         {
             bool result = false;
             bool result1 = false;
@@ -97,7 +97,7 @@ namespace Sinav_Sistemi
             //düşüldü.
             if (result1)
             {
-                SqlCommand command = new SqlCommand("UPDATE Users SET Password='" + newPassword + "' WHERE KullaniciAdi = '" + kullanıcıAdı + "' AND Password = '" + password + "'");
+                SqlCommand command = new SqlCommand("UPDATE Users SET Password='" + newPassword + "' WHERE KullaniciAdi = '" + kullanıcıAdı + "'");
 
                 command.Connection = connection;
                 connection.Open();
