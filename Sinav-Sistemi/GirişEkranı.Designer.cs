@@ -40,60 +40,70 @@ namespace Sinav_Sistemi
             // 
             // kullaniciAdiTextBox
             // 
-            this.kullaniciAdiTextBox.Location = new System.Drawing.Point(219, 198);
+            this.kullaniciAdiTextBox.BackColor = System.Drawing.Color.Snow;
+            this.kullaniciAdiTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.kullaniciAdiTextBox.Location = new System.Drawing.Point(224, 80);
             this.kullaniciAdiTextBox.Name = "kullaniciAdiTextBox";
-            this.kullaniciAdiTextBox.Size = new System.Drawing.Size(100, 22);
+            this.kullaniciAdiTextBox.Size = new System.Drawing.Size(100, 25);
             this.kullaniciAdiTextBox.TabIndex = 0;
             // 
             // sifreTextBox
             // 
-            this.sifreTextBox.Location = new System.Drawing.Point(219, 254);
+            this.sifreTextBox.BackColor = System.Drawing.Color.Snow;
+            this.sifreTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.sifreTextBox.Location = new System.Drawing.Point(224, 136);
             this.sifreTextBox.Name = "sifreTextBox";
-            this.sifreTextBox.Size = new System.Drawing.Size(100, 22);
+            this.sifreTextBox.Size = new System.Drawing.Size(100, 25);
             this.sifreTextBox.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(70, 201);
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(75, 83);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 17);
+            this.label1.Size = new System.Drawing.Size(94, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Kullanıcı Adı";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(70, 257);
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(75, 139);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 17);
+            this.label2.Size = new System.Drawing.Size(39, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Şifre";
             // 
             // girisYap
             // 
-            this.girisYap.Location = new System.Drawing.Point(219, 320);
+            this.girisYap.BackColor = System.Drawing.Color.Snow;
+            this.girisYap.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.girisYap.Location = new System.Drawing.Point(224, 202);
             this.girisYap.Name = "girisYap";
             this.girisYap.Size = new System.Drawing.Size(100, 38);
             this.girisYap.TabIndex = 4;
             this.girisYap.Text = "Giriş";
-            this.girisYap.UseVisualStyleBackColor = true;
+            this.girisYap.UseVisualStyleBackColor = false;
             this.girisYap.Click += new System.EventHandler(this.girisYap_Click);
             // 
             // kayitOl
             // 
-            this.kayitOl.Location = new System.Drawing.Point(73, 320);
+            this.kayitOl.BackColor = System.Drawing.Color.Snow;
+            this.kayitOl.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.kayitOl.Location = new System.Drawing.Point(78, 202);
             this.kayitOl.Name = "kayitOl";
             this.kayitOl.Size = new System.Drawing.Size(100, 38);
             this.kayitOl.TabIndex = 5;
             this.kayitOl.Text = "Kayıt Ol";
-            this.kayitOl.UseVisualStyleBackColor = true;
+            this.kayitOl.UseVisualStyleBackColor = false;
             this.kayitOl.Click += new System.EventHandler(this.kayitOl_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(216, 289);
+            this.label3.Location = new System.Drawing.Point(221, 171);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 17);
             this.label3.TabIndex = 6;
@@ -104,7 +114,8 @@ namespace Sinav_Sistemi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 450);
+            this.BackColor = System.Drawing.Color.Lavender;
+            this.ClientSize = new System.Drawing.Size(414, 313);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.kayitOl);
             this.Controls.Add(this.girisYap);

@@ -54,6 +54,7 @@ namespace Sinav_Sistemi
         {
             KayıtEkranı kyt = new KayıtEkranı();
             this.Hide();
+            kyt.Location = this.Location;
             kyt.Show();
         }
 
@@ -61,6 +62,7 @@ namespace Sinav_Sistemi
         {
             ŞifreDeğiştir frm = new ŞifreDeğiştir();
             this.Hide();
+            frm.Location = this.Location;
             frm.Show();
         }
     }
