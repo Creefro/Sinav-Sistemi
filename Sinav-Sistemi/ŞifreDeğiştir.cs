@@ -65,5 +65,13 @@ namespace Sinav_Sistemi
             }
             
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            GirişEkranı girişEkranı = new GirişEkranı();
+            this.Hide();
+            girişEkranı.Location = this.Location;
+            girişEkranı.Show();
+        }
     }
 }

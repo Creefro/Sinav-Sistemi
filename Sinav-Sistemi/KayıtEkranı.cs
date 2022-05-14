@@ -34,11 +34,11 @@ namespace Sinav_Sistemi
             };
             if (kayit.InsertUser(user)&&SifreKontrol()==true)
             {
-                MessageBox.Show("Kullanıcı Eklendi");
+                MessageBox.Show("Kullanıcı Eklendi","Kayıt Başarılı!");
             }
             else
             {
-                MessageBox.Show("Bu Kullanıcı adı var!");
+                MessageBox.Show("Bu Kullanıcı adı var!","Hata!");
             }
         }
 
@@ -46,7 +46,7 @@ namespace Sinav_Sistemi
         {
             if (sifreText.Text != sifreTekrarText.Text)
             {
-                MessageBox.Show("Şifreler uyuşmuyor. Lütfen kontrol edin.");
+                MessageBox.Show("Şifreler uyuşmuyor. Lütfen kontrol edin.","Hata!");
                 return false;
             }
             else
@@ -67,6 +67,7 @@ namespace Sinav_Sistemi
         {
             GirişEkranı giriş = new GirişEkranı();
             this.Hide();
+            giriş.Location = this.Location;
             giriş.Show();
         }
     }

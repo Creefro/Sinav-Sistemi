@@ -34,18 +34,20 @@ namespace Sinav_Sistemi
                 {
                     SınavEkle main = new SınavEkle();
                     this.Hide();
+                    main.Location = this.Location;
                     main.Show();
                 }
                 else if (user.UserTypeId == 1)
                 {
                     ÖğrenciGirişMain main = new ÖğrenciGirişMain();
                     this.Hide();
+                    main.Location = this.Location;
                     main.Show();
                 }
             }
             else
             {
-                MessageBox.Show("Kullanıcı Adı veya Şifre yanlış ama hangisi söylemem.");
+                MessageBox.Show("Kullanıcı adı veya şifre yanlış.", "Hata!");
             }
 
         }
@@ -54,6 +56,7 @@ namespace Sinav_Sistemi
         {
             KayıtEkranı kyt = new KayıtEkranı();
             this.Hide();
+            kyt.Location = this.Location;
             kyt.Show();
         }
 
@@ -61,6 +64,7 @@ namespace Sinav_Sistemi
         {
             ŞifreDeğiştir frm = new ŞifreDeğiştir();
             this.Hide();
+            frm.Location = this.Location;
             frm.Show();
         }
     }
