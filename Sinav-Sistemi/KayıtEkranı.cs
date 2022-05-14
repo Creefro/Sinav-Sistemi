@@ -67,6 +67,7 @@ namespace Sinav_Sistemi
         {
             GirişEkranı giriş = new GirişEkranı();
             this.Hide();
+            giriş.Location = this.Location;
             giriş.Show();
         }
     }

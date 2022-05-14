@@ -17,7 +17,6 @@ namespace Sinav_Sistemi
         {
             InitializeComponent();
         }
-       // public static string[] st;
         private void button1_Click(object sender, EventArgs e)
         {
             func();
@@ -49,6 +48,15 @@ namespace Sinav_Sistemi
             this.Hide();
             öğrenciGirişMain.Location = this.Location;
             öğrenciGirişMain.Show();
+        }
+
+        private void ÖğrenciAyarlarMenü_Load(object sender, EventArgs e)
+        {
+            radioButton2.Checked = true;
+            radioButton6.Checked = true;
+            radioButton10.Checked = true;
+            radioButton14.Checked = true;
+            radioButton17.Checked = true;
         }
     }
 }

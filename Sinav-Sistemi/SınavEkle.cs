@@ -38,11 +38,11 @@ namespace Sinav_Sistemi
 
             if (result)
             {
-                MessageBox.Show("Soru Başarıyla Eklendi");
+                MessageBox.Show("Soru Başarıyla Eklendi","Başarılı!");
             }
             else
             {
-                MessageBox.Show("Hata!");
+                MessageBox.Show("Lütfen beklenen değerleri giriniz.","Hata!");
             }
             
         }
@@ -51,6 +51,7 @@ namespace Sinav_Sistemi
         {
             GirişEkranı main = new GirişEkranı();
             this.Hide();
+            main.Location = this.Location;
             main.Show();
         }
     }

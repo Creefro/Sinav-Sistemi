@@ -229,5 +229,14 @@
   <ItemGroup>
     <None Include="Resources\welcome %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sigmaIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\extraIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adminIcon.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

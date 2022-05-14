@@ -58,9 +58,10 @@ namespace Sinav_Sistemi
             }
             else
             {
-                MessageBox.Show("Sınav Bitti! Doğru sayısı: "+dogruSayac+" Yanlış sayısı: "+(sayac-dogruSayac)+"");
+                MessageBox.Show("Doğru sayısı: "+dogruSayac+"\nYanlış sayısı: "+(sayac-dogruSayac)+"","Sınav Bitti!");
                 ÖğrenciGirişMain main = new ÖğrenciGirişMain();
                 this.Hide();
+                main.Location = this.Location;
                 main.Show();
             }
         }
@@ -84,11 +85,11 @@ namespace Sinav_Sistemi
             button1.Visible = false;
             if (selectedText == answer)
             {
-                MessageBox.Show("Doğru Cevap!");
+                MessageBox.Show("Doğru Cevap!","Sonuç!");
                 dogruSayac++;
             }
             else
-                MessageBox.Show("Yanlış Cevap!");
+                MessageBox.Show("Yanlış Cevap!","Sonuç!");
         }
 
         private void ansA_Click(object sender, EventArgs e)

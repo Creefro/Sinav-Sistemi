@@ -32,7 +32,6 @@ namespace Sinav_Sistemi
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ÖğrenciAyarlarMenü));
             this.label1 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -89,19 +88,19 @@ namespace Sinav_Sistemi
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(6, 41);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 25);
             this.numericUpDown1.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(226, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(340, 20);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Default: 1 Gün / 1 Hafta / 1 Ay / 3 Ay / 6 Ay / 1 Yıl";
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // groupBox1
             // 
@@ -232,16 +231,36 @@ namespace Sinav_Sistemi
             // numericUpDown2
             // 
             this.numericUpDown2.Location = new System.Drawing.Point(6, 42);
+            this.numericUpDown2.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(120, 25);
             this.numericUpDown2.TabIndex = 1;
+            this.numericUpDown2.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // numericUpDown4
             // 
             this.numericUpDown4.Location = new System.Drawing.Point(6, 41);
+            this.numericUpDown4.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown4.Name = "numericUpDown4";
             this.numericUpDown4.Size = new System.Drawing.Size(120, 25);
             this.numericUpDown4.TabIndex = 1;
+            this.numericUpDown4.Value = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
             // 
             // groupBox3
             // 
@@ -309,16 +328,36 @@ namespace Sinav_Sistemi
             // numericUpDown3
             // 
             this.numericUpDown3.Location = new System.Drawing.Point(6, 41);
+            this.numericUpDown3.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown3.Name = "numericUpDown3";
             this.numericUpDown3.Size = new System.Drawing.Size(120, 25);
             this.numericUpDown3.TabIndex = 1;
+            this.numericUpDown3.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             // 
             // numericUpDown5
             // 
             this.numericUpDown5.Location = new System.Drawing.Point(6, 41);
+            this.numericUpDown5.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown5.Name = "numericUpDown5";
             this.numericUpDown5.Size = new System.Drawing.Size(120, 25);
             this.numericUpDown5.TabIndex = 1;
+            this.numericUpDown5.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // groupBox4
             // 
@@ -483,11 +522,11 @@ namespace Sinav_Sistemi
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ÖğrenciAyarlarMenü";
             this.Text = "Ayarlar";
+            this.Load += new System.EventHandler(this.ÖğrenciAyarlarMenü_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -512,7 +551,6 @@ namespace Sinav_Sistemi
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton3;

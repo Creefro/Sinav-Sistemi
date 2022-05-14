@@ -71,6 +71,16 @@ namespace Sinav_Sistemi.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon adminIcon {
+            get {
+                object obj = ResourceManager.GetObject("adminIcon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap exam {
@@ -87,6 +97,16 @@ namespace Sinav_Sistemi.Properties {
             get {
                 object obj = ResourceManager.GetObject("exit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon extraIcon {
+            get {
+                object obj = ResourceManager.GetObject("extraIcon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
@@ -136,6 +156,16 @@ namespace Sinav_Sistemi.Properties {
         internal static System.Drawing.Icon settings {
             get {
                 object obj = ResourceManager.GetObject("settings", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon sigmaIcon {
+            get {
+                object obj = ResourceManager.GetObject("sigmaIcon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

@@ -16,84 +16,35 @@ namespace Sinav_Sistemi
         System.Timers.Timer timer;
         int hour, minute = 10, second;
         bool isTimerOn;
+        bool sigmaDone = false;
         public Sigma()
         {
             InitializeComponent();
         }
+        List<ISoru> sorular;
         static Random random;
-        int sayac;
         int rastgeleSayac;
-        string selectedText;
-        string answer;
+        string selectedText,answer;
         int questionId;
+        int dogruSayac = 0;//,toplamSoruSayac = 0;
+        int sayac;
         private void nextQueButton_Click(object sender, EventArgs e)
         {
-            
-
-            ansA.Enabled = true;
-            ansB.Enabled = true;
-            ansC.Enabled = true;
-            ansD.Enabled = true;
-            button1.Enabled = true;
-            button1.Visible = true;
-            button2.Visible = false;
-            nextQueButton.Enabled = false;
+            AnsButtons();
+            sigmaButton.Visible = false;
+            quizButton.Visible = false;
             random = new Random();
-            Questions questions = new Questions();
-            List<ISoru> sorular = questions.BilinenSoruGetir(GirişEkranı.user);
+           
             if (sayac<sorular.Count())
             {
-                var item = sorular.ElementAt(sayac);
-                queText.Text = item.QuestionText;
-                pictureBox1.Image = Image.FromFile(item.PicturePath);
-
-                Button[] siklar = { ansA, ansC, ansB, ansD};
-                int[] wrongs = new int[3];
-
-                int a = random.Next(0, 4);
-
-                if (a == 0)
-                    wrongs = new int[] { 1, 2, 3 };
-                else if (a == 1)
-                    wrongs = new int[] { 0, 2, 3 };
-                else if (a == 2)
-                    wrongs = new int[] { 0, 1, 3 };
-                else if (a == 3)
-                    wrongs = new int[] { 0, 1, 2 };
-
-                siklar[a].Text = item.RightAnswer;
-                siklar[wrongs[0]].Text = item.WrongAnswer1;
-                siklar[wrongs[1]].Text = item.WrongAnswer2;
-                siklar[wrongs[2]].Text = item.WrongAnswer3;
-                sayac++;
-                
-                answer = item.RightAnswer;
-                questionId = item.QuestionId;
+                SoruGetir();
             }
             else
             {
-                button1.Enabled = false;
+                sigmaDone = true;
                 RastgeleTest();
             }
 
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            cvpButtonEnabled();
-            button1.Enabled = false;
-
-            if (selectedText == answer)
-            {
-                questions.DogruSoruBilgiGuncelle(questionId, GirişEkranı.user);
-            }
-            else if (selectedText == null)
-            {
-                MessageBox.Show("Sınav Başladı!");
-            }
-            else
-            {
-                questions.YanlışSoruSil(questionId, GirişEkranı.user);
-            }
         }
 
         Questions questions = new Questions();
@@ -109,51 +60,18 @@ namespace Sinav_Sistemi
             else
                 isTimerOn = true;
 
-            button2.Enabled = true;
-            button2.Visible = true;
-            button1.Visible = false;
+            
             if (rastgeleSayac < RastgeleSorular.Count())
             {
-                var item = RastgeleSorular.ElementAt(rastgeleSayac);
-                queText.Text = item.QuestionText;
-                pictureBox1.Image = Image.FromFile(item.PicturePath);
-
-                Button[] radioButtons= { ansA, ansB, ansC, ansD };
-                int[] wrong = new int[3];
-
-                int rand = random.Next(0, 4);
-
-                if (rand == 0)
-                    wrong = new int[] { 1, 2, 3 };
-                else if (rand == 1)
-                    wrong = new int[] { 0, 2, 3 };
-                else if (rand == 2)
-                    wrong = new int[] { 0, 1, 3 };
-                else if (rand == 3)
-                    wrong = new int[] { 0, 1, 2 };
-
-                radioButtons[rand].Text = item.RightAnswer;
-
-                radioButtons[wrong[0]].Text = item.WrongAnswer1;
-                radioButtons[wrong[1]].Text = item.WrongAnswer2;
-                radioButtons[wrong[2]].Text = item.WrongAnswer3;
-                rastgeleSayac++;
-                rastgeleQuestionAnswer = item.RightAnswer;
-                rastgeleQuestionId = item.QuestionId;
-
+                RastgeleSoruGetir();
             }
             else
             {
-                MessageBox.Show("Sınav Bitti");
+                MessageBox.Show("Doğru sayısı: " + dogruSayac + "\nYanlış sayısı: " + (sayac + rastgeleSayac - dogruSayac) + "\nDoğru oranı: %"+ 100*dogruSayac/(rastgeleSayac+sayac) , "Sınav Bitti");
                 ÖğrenciGirişMain main = new ÖğrenciGirişMain();
                 this.Hide();
+                main.Location = this.Location;
                 main.Show();
-                ansA.Enabled = false;
-                ansB.Enabled = false;
-                ansC.Enabled = false;
-                ansD.Enabled = false;
-                button1.Enabled = false;
-                nextQueButton.Enabled = false;
             }
            
         }
@@ -161,13 +79,12 @@ namespace Sinav_Sistemi
         {
             rastgeleSayac = 0;
             sayac = 0;
+            dogruSayac = 0;
+            sorular = questions.BilinenSoruGetir(GirişEkranı.user);
             RastgeleSorular = questions.GetRandomQuestion(questions);
-            ansA.Enabled = false;
-            ansB.Enabled = false;
-            ansC.Enabled = false;
-            ansD.Enabled = false;
-            button1.Enabled = false;
-            button2.Enabled = false;
+            ansA.Visible = false; ansB.Visible = false; ansC.Visible = false; ansD.Visible = false;
+            sigmaButton.Visible = false;
+            quizButton.Visible = false;
 
             timer = new System.Timers.Timer();
             timer.Interval = 1000; //1s
@@ -197,40 +114,64 @@ namespace Sinav_Sistemi
                     ÖğrenciGirişMain main = new ÖğrenciGirişMain();
                     Sigma sigma = this;
                     sigma.Hide();
+                    main.Location = sigma.Location;
                     main.Show();
-                    ansA.Enabled = false;
-                    ansB.Enabled = false;
-                    ansC.Enabled = false;
-                    ansD.Enabled = false;
-                    button1.Enabled = false;
-                    nextQueButton.Enabled = false;
                 }
             }));
         }
         private void ansA_Click(object sender, EventArgs e)
         {
             selectedText = ((Button)sender).Text;
+            if(sigmaDone)
+            {
+                quizButton.Enabled = true;
+                quizButton.Visible = true;
+            }
+            else
+            {
+                sigmaButton.Enabled = true;
+                sigmaButton.Visible = true;
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             ÖğrenciGirişMain main = new ÖğrenciGirişMain();
             this.Hide();
+            main.Location = this.Location;
             main.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void sigmaButton_Click(object sender, EventArgs e)
         {
             cvpButtonEnabled();
-            button2.Enabled = false;
+            sigmaButton.Enabled = false;
+
+            if (selectedText == answer)
+            {
+                dogruSayac++;
+                questions.DogruSoruBilgiGuncelle(questionId, GirişEkranı.user);
+            }
+            else
+            {
+                questions.YanlışSoruSil(questionId, GirişEkranı.user);
+            }
+        }
+
+        private void quizButton_Click(object sender, EventArgs e)
+        {
+            cvpButtonEnabled();
+            quizButton.Enabled = false;
 
             if (selectedText == rastgeleQuestionAnswer)
             {
+                dogruSayac++;
                 questions.BilinenSoruEkle(GirişEkranı.user, rastgeleQuestionId);
             }
             else
                 Console.WriteLine("yanlış cevap");
         }
+
         private void cvpButtonEnabled()
         {
             ansA.Enabled = false;
@@ -238,6 +179,71 @@ namespace Sinav_Sistemi
             ansC.Enabled = false;
             ansD.Enabled = false;
             nextQueButton.Enabled = true;
+        }
+        void AnsButtons()
+        {
+            ansA.Visible = true; ansB.Visible = true; ansC.Visible = true; ansD.Visible = true;
+            ansA.Enabled = true; ansB.Enabled = true; ansC.Enabled = true; ansD.Enabled = true;
+            nextQueButton.Enabled = false;
+        }
+        void RastgeleSoruGetir()
+        {
+             var item = RastgeleSorular.ElementAt(rastgeleSayac);
+                queText.Text = item.QuestionText;
+                pictureBox1.Image = Image.FromFile(item.PicturePath);
+
+                Button[] radioButtons= { ansA, ansB, ansC, ansD };
+                int[] wrong = new int[3];
+
+                int rand = random.Next(0, 4);
+
+                if (rand == 0)
+                    wrong = new int[] { 1, 2, 3 };
+                else if (rand == 1)
+                    wrong = new int[] { 0, 2, 3 };
+                else if (rand == 2)
+                    wrong = new int[] { 0, 1, 3 };
+                else if (rand == 3)
+                    wrong = new int[] { 0, 1, 2 };
+
+                radioButtons[rand].Text = item.RightAnswer;
+
+                radioButtons[wrong[0]].Text = item.WrongAnswer1;
+                radioButtons[wrong[1]].Text = item.WrongAnswer2;
+                radioButtons[wrong[2]].Text = item.WrongAnswer3;
+                rastgeleSayac++;
+                rastgeleQuestionAnswer = item.RightAnswer;
+                rastgeleQuestionId = item.QuestionId;
+
+        }
+        void SoruGetir()
+        {
+            var item = sorular.ElementAt(sayac);
+            queText.Text = item.QuestionText;
+            pictureBox1.Image = Image.FromFile(item.PicturePath);
+
+            Button[] siklar = { ansA, ansC, ansB, ansD };
+            int[] wrongs = new int[3];
+
+            int a = random.Next(0, 4);
+
+            if (a == 0)
+                wrongs = new int[] { 1, 2, 3 };
+            else if (a == 1)
+                wrongs = new int[] { 0, 2, 3 };
+            else if (a == 2)
+                wrongs = new int[] { 0, 1, 3 };
+            else if (a == 3)
+                wrongs = new int[] { 0, 1, 2 };
+
+            siklar[a].Text = item.RightAnswer;
+            siklar[wrongs[0]].Text = item.WrongAnswer1;
+            siklar[wrongs[1]].Text = item.WrongAnswer2;
+            siklar[wrongs[2]].Text = item.WrongAnswer3;
+            sayac++;
+
+            answer = item.RightAnswer;
+            questionId = item.QuestionId;
         }
     }
 }

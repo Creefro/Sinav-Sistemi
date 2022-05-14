@@ -29,6 +29,7 @@ namespace Sinav_Sistemi
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExtraSınav));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.queText = new System.Windows.Forms.Label();
             this.nextQueButton = new System.Windows.Forms.Button();
@@ -152,8 +153,9 @@ namespace Sinav_Sistemi
             this.Controls.Add(this.nextQueButton);
             this.Controls.Add(this.queText);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ExtraSınav";
-            this.Text = "ExtraSınav";
+            this.Text = "Normal Sınav";
             this.Load += new System.EventHandler(this.ExtraSınav_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
